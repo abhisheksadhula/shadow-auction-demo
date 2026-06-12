@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shadow GM · IPL Auction Game</title>
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0B1221;--navy2:#0F1A2E;--navy3:#132040;--navy4:#1A2A45;
+  --gold:#F5C518;--gold2:#E6B800;--coral:#FF6B4A;--green:#2ECC71;
+  --white:#F0F4FF;--muted:#7B8FAB;--border:#1E3A5F;--card:#132040;
+}
+html{scroll-behavior:smooth}
+body{background:var(--navy);color:var(--white);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden}
+
+/* ── PHASE BAR ── */
+.phase-bar{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(11,18,33,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.phase-bar-inner{display:flex;align-items:stretch;max-width:900px;margin:0 auto}
+.phase-tab{flex:1;padding:.6rem 1rem;text-align:center;cursor:pointer;border-bottom:3px solid transparent;transition:all .2s;font-size:13px;color:var(--muted);font-weight:500;position:relative}
+.phase-tab.active{color:var(--white);border-bottom-color:var(--gold)}
+.phase-tab.done{color:var(--green)}
+.phase-tab.done::after{content:'✓';position:absolute;top:4px;right:8px;font-size:10px;color:var(--green)}
+.phase-tag{font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:block;font-family:'JetBrains Mono',monospace}
+.phase-tab.active .phase-tag{color:var(--gold)}
+
+/* ── SCREENS ── */
+.screen{display:none;max-width:900px;margin:0 auto;padding:5.5rem 1.5rem 2rem}
+.screen.active{display:block}
+
+/* ── TYPOGRAPHY ── */
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;color:var(--gold);text-transform:uppercase;margin-bottom:.5rem}
+h1{font-family:'Teko',sans-serif;font-size:clamp(38px,7vw,64px);font-weight:700;line-height:.95;letter-spacing:-.01em;margin-bottom:.75rem}
+h2{font-family:'Teko',sans-serif;font-size:32px;font-weight:600;margin-bottom:.5rem}
+h3{font-family:'Teko',sans-serif;font-size:22px;font-weight:500;margin-bottom:.35rem}
+p.sub{font-size:14px;color:#A8BBCC;line-height:1.65;margin-bottom:1.25rem}
+.gold{color:var(--gold)} .coral{color:var(--coral)} .green{color:var(--green)} .muted{color:var(--muted)}
+
+/* ── CARDS & INPUTS ── */
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.25rem}
+.card-sm{background:var(--navy2);border:1px solid var(--border);border-radius:10px;padding:1rem}
+label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;color:var(--muted);display:block;margin-bottom:.35rem}
+input[type=text]{width:100%;background:var(--navy);border:1px solid var(--border);border-radius:7px;padding:9px 13px;color:var(--white);font-size:14px;font-family:'Inter',sans-serif;outline:none;transition:border-color .2s;margin-bottom:.75rem}
+input[type=text]:focus{border-color:var(--gold)}
+.btn{font-size:13px;font-weight:600;padding:9px 20px;border-radius:8px;cursor:pointer;border:none;font-family:'Inter',sans-serif;transition:all .2s;display:inline-flex;align-items:center;gap:.4rem}
+.btn-gold{background:var(--gold);color:var(--navy)}
+.btn-gold:hover{background:var(--gold2)}
+.btn-gold:disabled{opacity:.4;cursor:default}
+.btn-outline{background:none;border:1px solid var(--border);color:var(--white)}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+.btn-sm{font-size:12px;padding:6px 14px}
+.btn-full{width:100%;justify-content:center}
+.tag{display:inline-block;font-size:10px;padding:2px 8px;border-radius:10px;font-family:'JetBrains Mono',monospace}
+.tag-gold{background:rgba(245,197,24,.12);color:var(--gold);border:1px solid rgba(245,197,24,.2)}
+.tag-green{background:rgba(46,204,113,.1);color:var(--green);border:1px solid rgba(46,204,113,.2)}
+.tag-coral{background:rgba(255,107,74,.1);color:var(--coral);border:1px solid rgba(255,107,74,.2)}
+.tag-muted{background:rgba(123,143,171,.1);color:var(--muted);border:1px solid rgba(123,143,171,.2)}
+
+/* ── PRE-AUCTION: JOIN ── */
+.join-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.5rem 0}
+.user-card{background:var(--card);border:2px solid var(--border);border-radius:12px;padding:1.25rem;transition:all .2s}
+.user-card.joined{border-color:var(--green)}
+.user-card.active-edit{border-color:var(--gold)}
+.user-num{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);margin-bottom:.5rem}
+.user-avatar{width:44px;height:44px;border-radius:50%;background:var(--navy4);display:flex;align-items:center;justify-content:center;font-family:'Teko',sans-serif;font-size:20px;color:var(--gold);margin-bottom:.75rem}
+.user-status{font-size:12px;color:var(--muted);margin-top:.5rem}
+.user-status.ok{color:var(--green)}
+
+/* ── PRE-AUCTION: SQUAD ── */
+.squad-layout{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:1rem}
+.pool-list{display:flex;flex-direction:column;gap:.4rem;max-height:420px;overflow-y:auto}
+.pool-list::-webkit-scrollbar{width:4px}
+.pool-list::-webkit-scrollbar-track{background:var(--navy)}
+.pool-list::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+.pool-item{display:flex;align-items:center;justify-content:space-between;background:var(--navy2);border:1px solid var(--border);border-radius:7px;padding:.5rem .75rem;cursor:pointer;transition:all .15s}
+.pool-item:hover{border-color:var(--gold)}
+.pool-item.selected{border-color:var(--gold);background:rgba(245,197,24,.06)}
+.pool-item-left{flex:1}
+.pool-item-name{font-size:13px;font-weight:500}
+.pool-item-meta{font-size:10px;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-top:1px}
+.pool-item-fv{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--gold);margin-left:.75rem;flex-shrink:0}
+.squad-slots{display:flex;flex-direction:column;gap:.4rem}
+.squad-slot{display:flex;align-items:center;justify-content:space-between;background:var(--navy2);border:1px dashed var(--border);border-radius:7px;padding:.5rem .75rem;min-height:44px}
+.squad-slot.filled{border-style:solid;border-color:var(--gold)}
+.slot-name{font-size:13px;font-weight:500}
+.slot-meta{font-size:10px;color:var(--muted);font-family:'JetBrains Mono',monospace}
+.slot-empty{font-size:12px;color:var(--muted)}
+.remove-btn{background:none;border:none;color:var(--muted);cursor:pointer;font-size:16px;padding:0 4px;line-height:1}
+.remove-btn:hover{color:var(--coral)}
+.budget-bar-wrap{margin-top:.75rem}
+.budget-bar{height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin:.3rem 0}
+.budget-fill{height:100%;background:linear-gradient(90deg,var(--green),var(--gold));border-radius:3px;transition:width .3s}
+.budget-fill.over{background:var(--coral)}
+
+/* ── DURING AUCTION ── */
+.auction-layout{display:grid;grid-template-columns:1.1fr .9fr;gap:1.25rem}
+.predict-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem}
+.lot-badge{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);margin-bottom:.25rem}
+.player-badge{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);margin-bottom:.25rem}
+.player-name{font-family:'Teko',sans-serif;font-size:36px;font-weight:700;line-height:1;margin-bottom:.2rem}
+.player-meta{font-size:12px;color:var(--muted);margin-bottom:1.25rem}
+.player-base{color:var(--gold);font-family:'JetBrains Mono',monospace}
+.section-label{font-size:10px;font-family:'JetBrains Mono',monospace;color:var(--muted);letter-spacing:.08em;margin-bottom:.4rem;margin-top:.9rem}
+.band-grid{display:grid;grid-template-columns:1fr 1fr;gap:.4rem}
+.choice-btn{background:var(--navy2);border:1px solid var(--border);border-radius:8px;padding:.55rem .75rem;font-family:'Teko',sans-serif;font-size:17px;color:var(--white);cursor:pointer;transition:all .15s;text-align:center}
+.choice-btn:hover{border-color:var(--gold)}
+.choice-btn.sel{background:rgba(245,197,24,.12);border-color:var(--gold);color:var(--gold)}
+.team-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.35rem}
+.team-btn{background:var(--navy2);border:1px solid var(--border);border-radius:6px;padding:.4rem .2rem;font-size:11px;color:var(--muted);cursor:pointer;font-family:'JetBrains Mono',monospace;transition:all .15s;text-align:center}
+.team-btn:hover{border-color:var(--gold);color:var(--gold)}
+.team-btn.sel{background:rgba(245,197,24,.12);border-color:var(--gold);color:var(--gold)}
+.sfo-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.4rem}
+.sfo-btn{background:var(--navy2);border:1px solid var(--border);border-radius:8px;padding:.5rem .3rem;font-size:14px;cursor:pointer;transition:all .15s;text-align:center;color:var(--muted)}
+.sfo-btn:hover{border-color:var(--gold)}
+.sfo-btn.sel{background:rgba(245,197,24,.12);border-color:var(--gold);color:var(--white)}
+.user-switcher{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.user-tab{padding:5px 14px;border-radius:20px;font-size:12px;border:1px solid var(--border);background:none;color:var(--muted);cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s}
+.user-tab.active{background:var(--gold);border-color:var(--gold);color:var(--navy);font-weight:600}
+.user-tab.done{border-color:var(--green);color:var(--green)}
+
+/* ── REVEAL ── */
+.reveal-overlay{display:none;position:fixed;inset:0;background:rgba(11,18,33,.92);z-index:500;align-items:center;justify-content:center;padding:1.5rem}
+.reveal-overlay.show{display:flex}
+.reveal-box{background:var(--navy2);border:1px solid var(--gold);border-radius:16px;padding:2rem;max-width:480px;width:100%;animation:popIn .3s ease}
+@keyframes popIn{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+.reveal-price-big{font-family:'Teko',sans-serif;font-size:64px;font-weight:700;color:var(--gold);line-height:1}
+.reveal-rows{display:flex;flex-direction:column;gap:.4rem;margin:1rem 0}
+.rrow{display:flex;justify-content:space-between;align-items:center;background:var(--navy);border-radius:7px;padding:.55rem 1rem}
+.rrow-label{font-size:13px;color:var(--muted)}
+.rrow-val{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500}
+.rrow-val.good{color:var(--green)} .rrow-val.bad{color:var(--coral)} .rrow-val.gold{color:var(--gold)}
+.rrow-total{border:1px solid rgba(245,197,24,.3)}
+.iq-section{margin:1rem 0}
+.iq-bar-bg{height:10px;background:var(--navy);border-radius:5px;overflow:hidden;margin:.4rem 0}
+.iq-bar-fill{height:100%;background:linear-gradient(90deg,var(--coral),var(--gold));border-radius:5px;width:0;transition:width 1.2s ease}
+.iq-big{font-family:'Teko',sans-serif;font-size:48px;font-weight:700;color:var(--gold);line-height:1}
+.squad-verdict{background:rgba(245,197,24,.06);border:1px solid rgba(245,197,24,.15);border-radius:8px;padding:.65rem 1rem;margin:.75rem 0;font-size:13px;color:#A8BBCC;display:none}
+.squad-verdict.show{display:block}
+
+/* ── SIDE PANEL ── */
+.side-panel{display:flex;flex-direction:column;gap:.75rem}
+.lot-progress{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1rem}
+.lot-dots{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.5rem}
+.lot-dot{width:10px;height:10px;border-radius:50%;background:var(--border)}
+.lot-dot.done{background:var(--green)}
+.lot-dot.current{background:var(--gold)}
+.lb-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1rem}
+.lb-row{display:flex;align-items:center;gap:.6rem;padding:.4rem .5rem;border-radius:6px;margin-bottom:.3rem}
+.lb-rank{font-family:'Teko',sans-serif;font-size:18px;font-weight:700;width:24px;flex-shrink:0}
+.lb-rank.r1{color:var(--gold)}.lb-rank.r2{color:#A8BBCC}.lb-rank.r3{color:#CD7F32}
+.lb-name{font-size:13px;flex:1}
+.lb-score{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--gold)}
+.no-pred{font-size:11px;color:var(--muted);font-family:'JetBrains Mono',monospace;display:inline-block;padding:2px 8px;background:rgba(123,143,171,.1);border-radius:4px}
+
+/* ── WRAPPED ── */
+.wrapped-layout{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:1rem}
+.wrapped-main{background:linear-gradient(135deg,#0F1A2E 0%,#1A2E50 50%,#0B1221 100%);border:1px solid var(--gold);border-radius:16px;padding:1.75rem;position:relative;overflow:hidden}
+.wrapped-main::before{content:'AUCTION\nWRAPPED';position:absolute;top:1rem;right:1rem;font-family:'Teko',sans-serif;font-size:10px;color:rgba(245,197,24,.2);letter-spacing:.1em;text-align:right;white-space:pre;line-height:1.4}
+.w-iq{font-family:'Teko',sans-serif;font-size:80px;font-weight:700;color:var(--gold);line-height:1}
+.w-iq-label{font-size:12px;color:var(--muted);margin-bottom:1.25rem}
+.w-arch{background:rgba(245,197,24,.08);border:1px solid rgba(245,197,24,.2);border-radius:8px;padding:.75rem 1rem;margin-bottom:1rem}
+.w-arch-name{font-family:'Teko',sans-serif;font-size:24px;color:var(--gold)}
+.w-arch-line{font-size:12px;color:var(--muted)}
+.w-stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.4rem;margin-bottom:1rem}
+.ws{background:rgba(255,255,255,.04);border-radius:7px;padding:.5rem;text-align:center}
+.ws-num{font-family:'Teko',sans-serif;font-size:24px;color:var(--white)}
+.ws-lbl{font-size:9px;color:var(--muted)}
+.w-calls{font-size:12px;color:#A8BBCC;line-height:1.7;border-top:1px solid var(--border);padding-top:.75rem}
+.w-calls strong{color:var(--gold)}
+.wrapped-side{display:flex;flex-direction:column;gap:.75rem}
+.w-squad-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1rem}
+.w-verdict-row{display:flex;align-items:flex-start;gap:.5rem;padding:.4rem 0;border-bottom:1px solid var(--border);font-size:12px}
+.w-verdict-row:last-child{border:none}
+.verdict-badge{font-size:10px;padding:2px 7px;border-radius:10px;flex-shrink:0;font-family:'JetBrains Mono',monospace}
+.verdict-badge.bargain,.verdict-badge.won{background:rgba(46,204,113,.1);color:var(--green);border:1px solid rgba(46,204,113,.2)}
+.verdict-badge.missed,.verdict-badge.dodged{background:rgba(255,107,74,.1);color:var(--coral);border:1px solid rgba(255,107,74,.2)}
+.verdict-badge.pending{background:rgba(123,143,171,.1);color:var(--muted);border:1px solid rgba(123,143,171,.2)}
+.user-select-wrap{display:flex;gap:.5rem;margin-bottom:1rem;align-items:center}
+.user-select-lbl{font-size:12px;color:var(--muted)}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.fade-up{animation:fadeUp .35s ease forwards}
+.pulse{animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+@media(max-width:600px){
+  .squad-layout,.auction-layout,.wrapped-layout{grid-template-columns:1fr}
+  .join-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- PHASE BAR -->
+<div class="phase-bar">
+  <div class="phase-bar-inner">
+    <div class="phase-tab active" id="tab-pre" onclick="goPhase('pre')">
+      <span class="phase-tag">Pre-Auction</span>
+      Join & Build Squad
+    </div>
+    <div class="phase-tab" id="tab-auction" onclick="goPhase('auction')">
+      <span class="phase-tag">During Auction</span>
+      Predict & Reveal
+    </div>
+    <div class="phase-tab" id="tab-wrapped" onclick="goPhase('wrapped')">
+      <span class="phase-tag">Post-Auction</span>
+      Auction Wrapped
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     SCREEN 1: PRE-AUCTION
+═══════════════════════════════════════════════ -->
+<div class="screen active" id="screen-pre">
+  <div class="eyebrow">Phase 1 · Pre-Auction</div>
+  <h1>Join & build<br>your <span class="gold">shadow squad.</span></h1>
+  <p class="sub">Three fans join before auction day. Each builds a squad of target players within a ₹100 Cr virtual budget. Your picks stay live through every real bid.</p>
+
+  <!-- STEP 1: JOIN -->
+  <div style="margin-bottom:2rem">
+    <h2>Step 1 — Join</h2>
+    <p class="sub" style="margin-bottom:1rem">Enter a name for each fan and click Join.</p>
+    <div class="join-grid">
+      <div class="user-card" id="uc-0">
+        <div class="user-num">FAN 01</div>
+        <div class="user-avatar" id="uav-0">?</div>
+        <label>DISPLAY NAME</label>
+        <input type="text" id="uname-0" placeholder="e.g. Abhishek" maxlength="16">
+        <button class="btn btn-gold btn-full btn-sm" onclick="joinUser(0)">Join</button>
+        <div class="user-status" id="ustatus-0">Not joined yet</div>
+      </div>
+      <div class="user-card" id="uc-1">
+        <div class="user-num">FAN 02</div>
+        <div class="user-avatar" id="uav-1">?</div>
+        <label>DISPLAY NAME</label>
+        <input type="text" id="uname-1" placeholder="e.g. Nagi" maxlength="16">
+        <button class="btn btn-gold btn-full btn-sm" onclick="joinUser(1)">Join</button>
+        <div class="user-status" id="ustatus-1">Not joined yet</div>
+      </div>
+      <div class="user-card" id="uc-2">
+        <div class="user-num">FAN 03</div>
+        <div class="user-avatar" id="uav-2">?</div>
+        <label>DISPLAY NAME</label>
+        <input type="text" id="uname-2" placeholder="e.g. Bhargav" maxlength="16">
+        <button class="btn btn-gold btn-full btn-sm" onclick="joinUser(2)">Join</button>
+        <div class="user-status" id="ustatus-2">Not joined yet</div>
+      </div>
+    </div>
+    <div id="join-msg" style="font-size:13px;color:var(--muted)"></div>
+  </div>
+
+  <!-- STEP 2: SQUAD -->
+  <div id="squad-section" style="display:none">
+    <h2>Step 2 — Build Shadow Squad</h2>
+    <p class="sub">Select who is building their squad, then pick up to 2 players. Budget: ₹100 Cr.</p>
+
+    <div class="user-switcher" id="squad-user-tabs"></div>
+
+    <div class="squad-layout">
+      <!-- Player pool -->
+      <div>
+        <h3 style="font-size:15px;margin-bottom:.5rem;color:var(--muted);font-family:'JetBrains Mono',monospace;letter-spacing:.06em">PLAYER POOL</h3>
+        <div class="pool-list" id="pool-list"></div>
+      </div>
+      <!-- Squad slots -->
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem">
+          <h3 style="font-size:15px;color:var(--muted);font-family:'JetBrains Mono',monospace;letter-spacing:.06em">YOUR SQUAD</h3>
+          <span id="squad-budget-label" class="tag tag-gold">₹0 / ₹100 Cr</span>
+        </div>
+        <div class="squad-slots" id="squad-slots">
+          <div class="squad-slot"><span class="slot-empty">Pick a player from the pool →</span></div>
+          <div class="squad-slot"><span class="slot-empty">Pick a player from the pool →</span></div>
+        </div>
+        <div class="budget-bar-wrap">
+          <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--muted)">
+            <span>Budget used</span><span id="budget-pct">0%</span>
+          </div>
+          <div class="budget-bar"><div class="budget-fill" id="budget-fill" style="width:0%"></div></div>
+        </div>
+        <button class="btn btn-gold btn-full" style="margin-top:.75rem" onclick="lockSquad()" id="lock-squad-btn" disabled>Lock Squad</button>
+        <div id="squad-msg" style="margin-top:.5rem;font-size:12px;color:var(--green);font-family:'JetBrains Mono',monospace"></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:2rem;display:flex;gap:.75rem;flex-wrap:wrap" id="pre-nav" style="display:none">
+    <button class="btn btn-gold" onclick="goToAuction()" id="start-auction-btn" disabled>
+      Start Auction →
+    </button>
+    <div id="pre-nav-msg" style="font-size:13px;color:var(--muted);align-self:center"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     SCREEN 2: DURING AUCTION
+═══════════════════════════════════════════════ -->
+<div class="screen" id="screen-auction">
+  <div class="eyebrow">Phase 2 · During Auction</div>
+  <h1>Predict every<br><span class="gold">bid.</span></h1>
+  <p class="sub">Each lot comes up one by one. All fans predict simultaneously, then the auctioneer's hammer falls.</p>
+
+  <div class="user-switcher" id="predict-user-tabs"></div>
+
+  <div class="auction-layout">
+    <!-- Predict card -->
+    <div class="predict-card" id="predict-card">
+      <div class="lot-badge" id="player-badge">PLAYER — · —</div>
+      <div class="player-name" id="lot-player">—</div>
+      <div class="player-meta" id="lot-meta">—</div>
+
+      <div class="section-label">PRICE BAND</div>
+      <div class="band-grid">
+        <button class="choice-btn" onclick="selectBand(this,'Under 5')">Under ₹5 Cr</button>
+        <button class="choice-btn" onclick="selectBand(this,'5-10')">₹5–10 Cr</button>
+        <button class="choice-btn" onclick="selectBand(this,'10-15')">₹10–15 Cr</button>
+        <button class="choice-btn" onclick="selectBand(this,'15+')">₹15+ Cr</button>
+      </div>
+
+      <div class="section-label">WINNING FRANCHISE</div>
+      <div class="team-grid">
+        <button class="team-btn" onclick="selectTeam(this,'CSK')">CSK</button>
+        <button class="team-btn" onclick="selectTeam(this,'MI')">MI</button>
+        <button class="team-btn" onclick="selectTeam(this,'RCB')">RCB</button>
+        <button class="team-btn" onclick="selectTeam(this,'KKR')">KKR</button>
+        <button class="team-btn" onclick="selectTeam(this,'SRH')">SRH</button>
+        <button class="team-btn" onclick="selectTeam(this,'DC')">DC</button>
+        <button class="team-btn" onclick="selectTeam(this,'RR')">RR</button>
+        <button class="team-btn" onclick="selectTeam(this,'PBKS')">PBKS</button>
+        <button class="team-btn" onclick="selectTeam(this,'GT')">GT</button>
+        <button class="team-btn" onclick="selectTeam(this,'LSG')">LSG</button>
+      </div>
+
+      <div class="section-label">STEAL / FAIR / OVERPAY?</div>
+      <div class="sfo-grid">
+        <button class="sfo-btn" onclick="selectSFO(this,'Steal')">🔥 Steal</button>
+        <button class="sfo-btn" onclick="selectSFO(this,'Fair')">👍 Fair</button>
+        <button class="sfo-btn" onclick="selectSFO(this,'Overpay')">😬 Overpay</button>
+      </div>
+
+      <div style="margin-top:1rem;display:flex;gap:.5rem">
+        <button class="btn btn-gold" style="flex:1;justify-content:center" onclick="submitPredict()" id="predict-btn">Submit Prediction</button>
+      </div>
+      <div id="predict-msg" style="margin-top:.5rem;font-size:12px;color:var(--green);font-family:'JetBrains Mono',monospace;min-height:18px"></div>
+
+      <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border);display:flex;gap:.5rem">
+        <button class="btn btn-outline btn-full btn-sm" onclick="revealLot()" id="reveal-btn" disabled>
+          🔨 Reveal Lot
+        </button>
+      </div>
+      <div id="reveal-msg" style="margin-top:.35rem;font-size:11px;color:var(--muted);min-height:16px"></div>
+    </div>
+
+    <!-- Side panel -->
+    <div class="side-panel">
+      <!-- Lot progress -->
+      <div class="lot-progress">
+        <div style="font-size:12px;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-bottom:.25rem">PLAYERS PROGRESS</div>
+        <div style="font-family:'Teko',sans-serif;font-size:22px" id="lot-counter">0 / 6 players</div>
+        <div class="lot-dots" id="lot-dots"></div>
+      </div>
+      <!-- Live leaderboard -->
+      <div class="lb-card">
+        <div style="font-size:12px;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-bottom:.75rem">LIVE LEADERBOARD</div>
+        <div id="lb-list">
+          <div style="font-size:12px;color:var(--muted)">Leaderboard updates after each reveal.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:1.5rem">
+    <button class="btn btn-gold" onclick="goPhase('wrapped')" id="go-wrapped-btn" disabled>
+      View Auction Wrapped →
+    </button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     SCREEN 3: WRAPPED
+═══════════════════════════════════════════════ -->
+<div class="screen" id="screen-wrapped">
+  <div class="eyebrow">Phase 3 · Post-Auction</div>
+  <h1>Auction<br><span class="gold">Wrapped.</span></h1>
+  <p class="sub">Your personalised recap. The card you share on WhatsApp. Every stat driven by your predictions during the live auction.</p>
+
+  <div class="user-select-wrap">
+    <span class="user-select-lbl">Viewing:</span>
+    <div id="wrapped-user-tabs"></div>
+  </div>
+
+  <div class="wrapped-layout" id="wrapped-content"></div>
+
+  <div style="margin-top:1.5rem">
+    <button class="btn btn-outline btn-sm" onclick="resetAll()">↺ Reset & play again</button>
+  </div>
+</div>
+
+<!-- REVEAL OVERLAY -->
+<div class="reveal-overlay" id="reveal-overlay">
+  <div class="reveal-box">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem">
+      <div>
+        <div style="font-size:12px;color:var(--muted);margin-bottom:.15rem" id="ro-player">—</div>
+        <div class="reveal-price-big" id="ro-price">—</div>
+        <div style="font-size:13px;color:var(--muted)" id="ro-sub">—</div>
+      </div>
+      <span class="tag tag-gold" id="ro-band">—</span>
+    </div>
+    <div class="reveal-rows" id="ro-scores"></div>
+    <div class="iq-section">
+      <div style="font-size:11px;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-bottom:.25rem">AUCTION IQ — THIS LOT</div>
+      <div class="iq-bar-bg"><div class="iq-bar-fill" id="ro-iq-fill"></div></div>
+      <div class="iq-big" id="ro-iq-num">—</div>
+      <div style="font-size:12px;color:var(--muted)">You were smarter than <strong id="ro-iq-str" style="color:var(--gold)">—</strong> of fans</div>
+    </div>
+    <div class="squad-verdict" id="ro-squad-verdict"></div>
+    <button class="btn btn-gold btn-full" style="margin-top:1rem" onclick="closeReveal()" id="next-lot-btn">Next Lot →</button>
+  </div>
+</div>
+
+<script>
+// ══════════════════════════════════════════════
+// DATA
+// ══════════════════════════════════════════════
+const DEMO_PLAYERS = [{"lot_no": 278, "player_name": "Rishabh Pant", "overseas": false, "capped": true, "role": "Wicketkeeper", "rating": 94, "base_price_crore": 2.0, "winning_team": "LSG", "winning_price_crore": 27.0, "actual_band": "15+", "fair_value_crore": 18.59, "steal_truth": "Overpay", "auction_iq_baseline": {"crowd_mean": 80.2, "p_full": 0.732, "p_close": 0.176, "p_miss": 0.092}}, {"lot_no": 188, "player_name": "Bhuvneshwar Kumar", "overseas": false, "capped": true, "role": "Bowler", "rating": 83, "base_price_crore": 2.0, "winning_team": "RCB", "winning_price_crore": 10.75, "actual_band": "10-15", "fair_value_crore": 10.14, "steal_truth": "Fair", "auction_iq_baseline": {"crowd_mean": 74.8, "p_full": 0.609, "p_close": 0.346, "p_miss": 0.044}}, {"lot_no": 186, "player_name": "Deepak Chahar", "overseas": false, "capped": true, "role": "Bowler", "rating": 87, "base_price_crore": 2.0, "winning_team": "MI", "winning_price_crore": 9.25, "actual_band": "5-10", "fair_value_crore": 11.25, "steal_truth": "Fair", "auction_iq_baseline": {"crowd_mean": 43.2, "p_full": 0.171, "p_close": 0.653, "p_miss": 0.175}}, {"lot_no": 185, "player_name": "Akash Deep", "overseas": false, "capped": true, "role": "Unknown", "rating": null, "base_price_crore": 1.0, "winning_team": "LSG", "winning_price_crore": 8.0, "actual_band": "5-10", "fair_value_crore": 3.19, "steal_truth": "Overpay", "auction_iq_baseline": {"crowd_mean": 48.0, "p_full": 0.169, "p_close": 0.777, "p_miss": 0.054}}, {"lot_no": 118, "player_name": "Priyansh Arya", "overseas": false, "capped": false, "role": "Batsman", "rating": 81, "base_price_crore": 0.3, "winning_team": "PBKS", "winning_price_crore": 3.8, "actual_band": "Under 5", "fair_value_crore": 0.43, "steal_truth": "Overpay", "auction_iq_baseline": {"crowd_mean": 79.2, "p_full": 0.725, "p_close": 0.169, "p_miss": 0.106}}, {"lot_no": 172, "player_name": "Anshul Kamboj", "overseas": false, "capped": true, "role": "Unknown", "rating": null, "base_price_crore": 0.3, "winning_team": "CSK", "winning_price_crore": 3.4, "actual_band": "Under 5", "fair_value_crore": 0.65, "steal_truth": "Overpay", "auction_iq_baseline": {"crowd_mean": 79.2, "p_full": 0.725, "p_close": 0.169, "p_miss": 0.106}}];
+
+const SQUAD_POOL = [{"lot_no":278,"player_name":"Rishabh Pant","role":"Wicketkeeper","overseas":false,"capped":true,"base_price_crore":2.0,"fair_value_crore":18.59},{"lot_no":281,"player_name":"Shreyas Iyer","role":"Batsman","overseas":false,"capped":true,"base_price_crore":2.0,"fair_value_crore":10.57},{"lot_no":263,"player_name":"Venkatesh Iyer","role":"All-rounder","overseas":false,"capped":true,"base_price_crore":2.0,"fair_value_crore":9.76},{"lot_no":275,"player_name":"Yuzvendra Chahal","role":"Bowler","overseas":false,"capped":true,"base_price_crore":2.0,"fair_value_crore":11.54},{"lot_no":280,"player_name":"Jos Buttler","role":"Wicketkeeper","overseas":true,"capped":true,"base_price_crore":2.0,"fair_value_crore":11.4},{"lot_no":272,"player_name":"KL Rahul","role":"Batsman","overseas":false,"capped":true,"base_price_crore":2.0,"fair_value_crore":7.73},{"lot_no":246,"player_name":"Trent Boult","role":"Bowler","overseas":true,"capped":true,"base_price_crore":2.0,"fair_value_crore":5.6},{"lot_no":274,"player_name":"Mohammed Siraj","role":"Bowler","overseas":false,"capped":true,"base_price_crore":2.0,"fair_value_crore":13.85},{"lot_no":279,"player_name":"Mitchell Starc","role":"Bowler","overseas":true,"capped":true,"base_price_crore":2.0,"fair_value_crore":7.46},{"lot_no":255,"player_name":"Ishan Kishan","role":"Batsman","overseas":false,"capped":true,"base_price_crore":2.0,"fair_value_crore":9.04},{"lot_no":254,"player_name":"Jitesh Sharma","role":"Wicketkeeper","overseas":false,"capped":true,"base_price_crore":1.0,"fair_value_crore":6.86},{"lot_no":262,"player_name":"Marcus Stoinis","role":"All-rounder","overseas":true,"capped":true,"base_price_crore":2.0,"fair_value_crore":6.47},{"lot_no":188,"player_name":"Bhuvneshwar Kumar","role":"Bowler","overseas":false,"capped":true,"base_price_crore":2.0,"fair_value_crore":10.14},{"lot_no":186,"player_name":"Deepak Chahar","role":"Bowler","overseas":false,"capped":true,"base_price_crore":2.0,"fair_value_crore":11.25},{"lot_no":273,"player_name":"Liam Livingstone","role":"All-rounder","overseas":true,"capped":true,"base_price_crore":2.0,"fair_value_crore":5.25},{"lot_no":185,"player_name":"Akash Deep","role":"Unknown","overseas":false,"capped":true,"base_price_crore":1.0,"fair_value_crore":3.19},{"lot_no":190,"player_name":"Tushar Deshpande","role":"Unknown","overseas":false,"capped":true,"base_price_crore":1.0,"fair_value_crore":3.19},{"lot_no":230,"player_name":"Abdul Samad","role":"All-rounder","overseas":false,"capped":true,"base_price_crore":0.3,"fair_value_crore":0.85},{"lot_no":118,"player_name":"Priyansh Arya","role":"Batsman","overseas":false,"capped":false,"base_price_crore":0.3,"fair_value_crore":0.43},{"lot_no":172,"player_name":"Anshul Kamboj","role":"Unknown","overseas":false,"capped":true,"base_price_crore":0.3,"fair_value_crore":0.65}];
+
+const TEAMS = ['CSK','MI','RCB','KKR','SRH','DC','RR','PBKS','GT','LSG'];
+const BUDGET = 100;
+const MAX_SQUAD = 2;
+
+// ══════════════════════════════════════════════
+// STATE
+// ══════════════════════════════════════════════
+let users = [{name:'',joined:false,squad:[],predictions:{},score:0},{name:'',joined:false,squad:[],predictions:{},score:0},{name:'',joined:false,squad:[],predictions:{},score:0}];
+let activeSquadUser = 0;
+let activePredictUser = 0;
+let currentLotIdx = 0;
+let revealedLots = [];
+let currentPredictions = {}; // uid -> {band, team, sfo}
+
+// ══════════════════════════════════════════════
+// PHASE NAVIGATION
+// ══════════════════════════════════════════════
+function goPhase(phase){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.phase-tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('screen-'+phase).classList.add('active');
+  document.getElementById('tab-'+phase).classList.add('active');
+  if(phase==='auction') initAuction();
+  if(phase==='wrapped') initWrapped();
+}
+
+// ══════════════════════════════════════════════
+// PRE-AUCTION: JOIN
+// ══════════════════════════════════════════════
+function joinUser(idx){
+  const nameEl = document.getElementById('uname-'+idx);
+  const name = nameEl.value.trim();
+  if(!name){nameEl.style.borderColor='var(--coral)';setTimeout(()=>nameEl.style.borderColor='',1200);return;}
+  users[idx].name = name;
+  users[idx].joined = true;
+  nameEl.disabled = true;
+  const uc = document.getElementById('uc-'+idx);
+  uc.classList.add('joined');
+  document.getElementById('uav-'+idx).textContent = name[0].toUpperCase();
+  document.getElementById('ustatus-'+idx).textContent = '✓ Joined as '+name;
+  document.getElementById('ustatus-'+idx).classList.add('ok');
+  uc.querySelector('.btn').disabled = true;
+
+  const joinedCount = users.filter(u=>u.joined).length;
+  if(joinedCount===1){
+    document.getElementById('squad-section').style.display='block';
+    document.getElementById('pre-nav').style.display='flex';
+    buildSquadUserTabs();
+    buildPoolList();
+    buildSquadSlots();
+  }
+  if(joinedCount>=1) buildSquadUserTabs();
+  checkPreNav();
+  document.getElementById('join-msg').textContent = joinedCount < 3 ? `${joinedCount}/3 fans joined.` : '';
+}
+
+function checkPreNav(){
+  const allJoined = users.every(u=>u.joined);
+  const allSquadLocked = users.every(u=>u.squad.length>0);
+  const btn = document.getElementById('start-auction-btn');
+  const msg = document.getElementById('pre-nav-msg');
+  if(allJoined && allSquadLocked){
+    btn.disabled = false;
+    msg.textContent = 'All fans ready. Start the auction!';
+    msg.style.color = 'var(--green)';
+  } else if(allJoined){
+    msg.textContent = 'All joined. Build and lock each squad to start.';
+  } else {
+    msg.textContent = 'Join all 3 fans first.';
+  }
+}
+
+// ══════════════════════════════════════════════
+// PRE-AUCTION: SQUAD
+// ══════════════════════════════════════════════
+function buildSquadUserTabs(){
+  const el = document.getElementById('squad-user-tabs');
+  el.innerHTML = '';
+  users.forEach((u,i)=>{
+    if(!u.joined) return;
+    const btn = document.createElement('button');
+    btn.className = 'user-tab' + (i===activeSquadUser?' active':'') + (u.squad.length>0?' done':'');
+    btn.textContent = u.name + (u.squad.length>0?' ✓':'');
+    btn.onclick = ()=>{ activeSquadUser=i; buildSquadUserTabs(); buildSquadSlots(); updateBudgetBar(); };
+    el.appendChild(btn);
+  });
+}
+
+function buildPoolList(){
+  const el = document.getElementById('pool-list');
+  el.innerHTML = '';
+  SQUAD_POOL.forEach(p=>{
+    const div = document.createElement('div');
+    div.className = 'pool-item';
+    div.id = 'pool-'+p.lot_no;
+    const roleTag = p.role!=='Unknown' ? `<span style="color:var(--gold)">${p.role}</span> · ` : '';
+    const ovTag = p.overseas ? '🌍 ' : '';
+    div.innerHTML = `<div class="pool-item-left">
+      <div class="pool-item-name">${ovTag}${p.player_name}</div>
+      <div class="pool-item-meta">${roleTag}Base ₹${p.base_price_crore}Cr</div>
+    </div>
+    <div class="pool-item-fv">FV ₹${p.fair_value_crore}Cr</div>`;
+    div.onclick = ()=>addToSquad(p);
+    el.appendChild(div);
+  });
+}
+
+function addToSquad(player){
+  const u = users[activeSquadUser];
+  if(u.squad.length>=MAX_SQUAD){showMsg('squad-msg','Max 2 players per squad.','var(--coral)');return;}
+  if(u.squad.find(p=>p.lot_no===player.lot_no)){showMsg('squad-msg','Already in squad.','var(--coral)');return;}
+  const spent = u.squad.reduce((s,p)=>s+p.fair_value_crore,0);
+  if(spent + player.fair_value_crore > BUDGET){showMsg('squad-msg','Budget exceeded! ₹'+BUDGET+'Cr limit.','var(--coral)');return;}
+  u.squad.push({...player, bid: player.fair_value_crore});
+  buildSquadSlots();
+  updateBudgetBar();
+  document.getElementById('pool-'+player.lot_no).classList.add('selected');
+}
+
+function removeFromSquad(lotNo){
+  const u = users[activeSquadUser];
+  u.squad = u.squad.filter(p=>p.lot_no!==lotNo);
+  buildSquadSlots();
+  updateBudgetBar();
+  const el = document.getElementById('pool-'+lotNo);
+  if(el) el.classList.remove('selected');
+  if(u.squad.length===0) document.getElementById('lock-squad-btn').disabled=true;
+}
+
+function buildSquadSlots(){
+  const u = users[activeSquadUser];
+  const el = document.getElementById('squad-slots');
+  el.innerHTML='';
+  for(let i=0;i<MAX_SQUAD;i++){
+    const div = document.createElement('div');
+    div.className = 'squad-slot' + (i<u.squad.length?' filled':'');
+    if(i<u.squad.length){
+      const p = u.squad[i];
+      div.innerHTML=`<div><div class="slot-name">${p.player_name}</div><div class="slot-meta">${p.role!=='Unknown'?p.role:'—'} · FV ₹${p.fair_value_crore}Cr</div></div><button class="remove-btn" onclick="removeFromSquad(${p.lot_no})">✕</button>`;
+    } else {
+      div.innerHTML=`<span class="slot-empty">Pick a player from the pool →</span>`;
+    }
+    el.appendChild(div);
+  }
+  document.getElementById('lock-squad-btn').disabled = u.squad.length===0;
+}
+
+function updateBudgetBar(){
+  const u = users[activeSquadUser];
+  const spent = u.squad.reduce((s,p)=>s+p.fair_value_crore,0);
+  const pct = Math.min(100, spent/BUDGET*100);
+  document.getElementById('budget-fill').style.width=pct+'%';
+  document.getElementById('budget-fill').className='budget-fill'+(pct>90?' over':'');
+  document.getElementById('budget-pct').textContent=Math.round(pct)+'%';
+  document.getElementById('squad-budget-label').textContent=`₹${spent.toFixed(1)} / ₹${BUDGET} Cr`;
+}
+
+function lockSquad(){
+  const u = users[activeSquadUser];
+  if(u.squad.length===0) return;
+  showMsg('squad-msg','✓ Squad locked for '+u.name,'var(--green)');
+  document.getElementById('lock-squad-btn').disabled=true;
+  buildSquadUserTabs();
+  checkPreNav();
+  // move to next user without squad
+  const next = users.findIndex((u2,i)=>i!==activeSquadUser && u2.joined && u2.squad.length===0);
+  if(next>-1){activeSquadUser=next;buildSquadUserTabs();buildSquadSlots();updateBudgetBar();}
+}
+
+function goToAuction(){
+  goPhase('auction');
+  document.getElementById('tab-pre').classList.add('done');
+}
+
+// ══════════════════════════════════════════════
+// DURING AUCTION
+// ══════════════════════════════════════════════
+function initAuction(){
+  buildPredictUserTabs();
+  buildLotDots();
+  renderCurrentLot();
+  renderLeaderboard();
+}
+
+function buildPredictUserTabs(){
+  const el = document.getElementById('predict-user-tabs');
+  el.innerHTML='';
+  users.forEach((u,i)=>{
+    if(!u.joined) return;
+    const hasPred = currentPredictions[i] && currentPredictions[i].band;
+    const btn = document.createElement('button');
+    btn.className='user-tab'+(i===activePredictUser?' active':'')+(hasPred?' done':'');
+    btn.textContent = u.name + (hasPred?' ✓':'');
+    btn.onclick=()=>{activePredictUser=i;buildPredictUserTabs();clearPredictSelections();restoreUserPred(i);};
+    el.appendChild(btn);
+  });
+}
+
+function buildLotDots(){
+  const el = document.getElementById('lot-dots');
+  el.innerHTML='';
+  DEMO_PLAYERS.forEach((_,i)=>{
+    const d=document.createElement('div');
+    d.className='lot-dot'+(i<currentLotIdx?' done':i===currentLotIdx?' current':'');
+    el.appendChild(d);
+  });
+  document.getElementById('lot-counter').textContent=currentLotIdx+' / '+DEMO_PLAYERS.length+' players';
+}
+
+function renderCurrentLot(){
+  if(currentLotIdx>=DEMO_PLAYERS.length){
+    document.getElementById('predict-card').innerHTML='<div style="text-align:center;padding:3rem 1rem"><div style="font-family:Teko,sans-serif;font-size:32px;color:var(--gold)">Auction Complete!</div><p class="sub" style="margin-top:.5rem">All lots revealed. View your Wrapped card.</p></div>';
+    document.getElementById('go-wrapped-btn').disabled=false;
+    return;
+  }
+  const p = DEMO_PLAYERS[currentLotIdx];
+  document.getElementById('player-badge').textContent=`PLAYER ${p.lot_no} · ${p.role!=='Unknown'?p.role:'Player'}${p.capped?' · CAPPED':''}`;
+  document.getElementById('lot-player').textContent=p.player_name;
+  const ovStr = p.overseas?'Overseas · ':'India · ';
+  const ratingStr = p.rating?` · Rating ${p.rating}`:'';
+  document.getElementById('lot-meta').innerHTML=`${ovStr}Base price: <span class="player-base">₹${p.base_price_crore} Cr</span>${ratingStr}`;
+  document.getElementById('predict-msg').textContent='';
+  document.getElementById('reveal-msg').textContent='All fans must predict before revealing.';
+  document.getElementById('reveal-btn').disabled=true;
+  currentPredictions={};
+  clearPredictSelections();
+  buildPredictUserTabs();
+  buildLotDots();
+}
+
+function clearPredictSelections(){
+  document.querySelectorAll('.choice-btn,.team-btn,.sfo-btn').forEach(b=>b.classList.remove('sel'));
+}
+
+function restoreUserPred(uid){
+  const pred = currentPredictions[uid];
+  if(!pred) return;
+  document.querySelectorAll('.choice-btn').forEach(b=>{if(b.getAttribute('data-val')===pred.band)b.classList.add('sel');});
+  document.querySelectorAll('.team-btn').forEach(b=>{if(b.getAttribute('data-val')===pred.team)b.classList.add('sel');});
+  document.querySelectorAll('.sfo-btn').forEach(b=>{if(b.getAttribute('data-val')===pred.sfo)b.classList.add('sel');});
+}
+
+let selBand=null,selTeam=null,selSFO=null;
+function selectBand(el,v){document.querySelectorAll('.choice-btn').forEach(b=>{b.classList.remove('sel');b.setAttribute('data-val',b.textContent.includes('Under')?'Under 5':b.textContent.includes('5–10')?'5-10':b.textContent.includes('10–15')?'10-15':'15+');});el.classList.add('sel');selBand=v;}
+function selectTeam(el,v){document.querySelectorAll('.team-btn').forEach(b=>{b.classList.remove('sel');b.setAttribute('data-val',b.textContent);});el.classList.add('sel');selTeam=v;}
+function selectSFO(el,v){document.querySelectorAll('.sfo-btn').forEach(b=>{b.classList.remove('sel');b.setAttribute('data-val',b.textContent.includes('Steal')?'Steal':b.textContent.includes('Fair')?'Fair':'Overpay');});el.classList.add('sel');selSFO=v;}
+
+function submitPredict(){
+  if(!selBand||!selTeam||!selSFO){showMsg('predict-msg','Select band, franchise, and SFO first.','var(--coral)');return;}
+  currentPredictions[activePredictUser]={band:selBand,team:selTeam,sfo:selSFO};
+  showMsg('predict-msg','✓ Prediction saved for '+users[activePredictUser].name,'var(--green)');
+  buildPredictUserTabs();
+  selBand=selTeam=selSFO=null;
+  // Check if all joined users have predicted
+  const allPred = users.every((u,i)=>!u.joined || currentPredictions[i]);
+  if(allPred){
+    document.getElementById('reveal-btn').disabled=false;
+    document.getElementById('reveal-msg').textContent='All fans predicted! Ready to reveal.';
+  } else {
+    const remaining = users.filter((u,i)=>u.joined&&!currentPredictions[i]).map(u=>u.name);
+    document.getElementById('reveal-msg').textContent='Waiting for: '+remaining.join(', ');
+  }
+  // Move to next user who hasn't predicted
+  const nextIdx = users.findIndex((u,i)=>u.joined&&!currentPredictions[i]);
+  if(nextIdx>-1){activePredictUser=nextIdx;buildPredictUserTabs();clearPredictSelections();}
+}
+
+// ── SCORING ──────────────────────────────────
+const BAND_LABELS=['Under 5','5-10','10-15','15+'];
+function bandIndex(b){return BAND_LABELS.indexOf(b);}
+
+function scoreBand(pred,actual){
+  if(!actual) return {pts:0,outcome:'unsold'};
+  const d=Math.abs(bandIndex(pred)-bandIndex(actual));
+  if(d===0) return {pts:100,outcome:'exact'};
+  if(d===1) return {pts:40,outcome:'close'};
+  return {pts:0,outcome:'miss'};
+}
+
+function scoreSFO(choice,truth){
+  if(!truth||!choice) return {pts:0,correct:false};
+  return {pts:choice===truth?60:0,correct:choice===truth};
+}
+
+function iqPercentile(userScore,baseline){
+  if(!baseline) return 50;
+  const n=1000;
+  const dist=[...Array(Math.round(baseline.p_miss*n)).fill(0),...Array(Math.round(baseline.p_close*n)).fill(40),...Array(Math.round(baseline.p_full*n)).fill(100)];
+  if(!dist.length) return 50;
+  const below=dist.filter(s=>s<userScore).length+dist.filter(s=>s===userScore).length;
+  return Math.round(below/dist.length*100);
+}
+
+function squadVerdict(player,squad){
+  const pick = squad.find(p=>p.lot_no===player.lot_no);
+  if(!pick) return null;
+  const demoPlayer = DEMO_PLAYERS.find(p=>p.lot_no===player.lot_no);
+  if(!demoPlayer) return null;
+  if(pick.bid >= demoPlayer.winning_price_crore){
+    return demoPlayer.winning_price_crore <= demoPlayer.fair_value_crore*0.8 ? {verdict:'bargain',line:`You landed ${player.player_name} at a bargain!`} : {verdict:'won',line:`You successfully bought ${player.player_name}.`};
+  }
+  if(demoPlayer.winning_price_crore >= demoPlayer.fair_value_crore*1.25) return {verdict:'dodged',line:`${demoPlayer.winning_team} overpaid for ${player.player_name} — you dodged it.`};
+  return {verdict:'missed',line:`${demoPlayer.winning_team} grabbed ${player.player_name} before you. Tough miss.`};
+}
+
+function revealLot(){
+  const player = DEMO_PLAYERS[currentLotIdx];
+  // Score all users
+  const scores={};
+  users.forEach((u,i)=>{
+    if(!u.joined) return;
+    const pred = currentPredictions[i]||{band:null,team:null,sfo:null};
+    const bs = scoreBand(pred.band,player.actual_band);
+    const frPts = pred.team===player.winning_team?50:0;
+    const sfo = scoreSFO(pred.sfo,player.steal_truth);
+    const total = bs.pts+frPts+sfo.pts;
+    const iq = iqPercentile(bs.pts,player.auction_iq_baseline);
+    scores[i]={band:bs,frPts,sfo,total,iq,pred};
+    u.score+=total;
+    u.predictions[player.lot_no]={...scores[i],player};
+  });
+  revealedLots.push(player.lot_no);
+  showRevealOverlay(player,scores);
+}
+
+function showRevealOverlay(player,scores){
+  document.getElementById('ro-player').textContent=player.player_name+' → '+player.winning_team;
+  document.getElementById('ro-price').textContent='₹'+player.winning_price_crore+' Cr';
+  document.getElementById('ro-sub').textContent='Fair value: ₹'+player.fair_value_crore+' Cr';
+  document.getElementById('ro-band').textContent=player.actual_band;
+  // Scores per user
+  let rowsHTML='';
+  users.forEach((u,i)=>{
+    if(!u.joined) return;
+    const s=scores[i];
+    const pred=s.pred;
+    rowsHTML+=`<div style="font-size:11px;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-bottom:.2rem">${u.name}</div>`;
+    rowsHTML+=`<div class="rrow"><div class="rrow-label">Band: ${pred.band||'—'} → ${player.actual_band}</div><div class="rrow-val ${s.band.outcome==='exact'?'good':s.band.outcome==='close'?'gold':'bad'}">${s.band.outcome==='exact'?'Exact':s.band.outcome==='close'?'Close':'Miss'} +${s.band.pts}</div></div>`;
+    rowsHTML+=`<div class="rrow"><div class="rrow-label">Franchise: ${pred.team||'—'} → ${player.winning_team}</div><div class="rrow-val ${s.frPts>0?'good':'bad'}">${s.frPts>0?'✓':''} +${s.frPts}</div></div>`;
+    rowsHTML+=`<div class="rrow"><div class="rrow-label">SFO: ${pred.sfo||'—'} → ${player.steal_truth}</div><div class="rrow-val ${s.sfo.correct?'good':'bad'}">${s.sfo.correct?'✓':''} +${s.sfo.pts}</div></div>`;
+    rowsHTML+=`<div class="rrow rrow-total"><div class="rrow-label" style="font-weight:600;color:var(--white)">${u.name} total this lot</div><div class="rrow-val gold">${s.total} pts → ${u.score} total</div></div>`;
+    if(i<users.filter(u2=>u2.joined).length-1) rowsHTML+=`<div style="height:.5rem"></div>`;
+  });
+  document.getElementById('ro-scores').innerHTML=rowsHTML;
+  // IQ — show for activePredictUser
+  const activeScore = scores[activePredictUser]||scores[users.findIndex(u=>u.joined)];
+  if(activeScore){
+    setTimeout(()=>{
+      document.getElementById('ro-iq-fill').style.width=activeScore.iq+'%';
+    },300);
+    document.getElementById('ro-iq-num').textContent=activeScore.iq+'th';
+    document.getElementById('ro-iq-str').textContent=activeScore.iq+'%';
+  }
+  // Squad verdict
+  const verdict = squadVerdict(player,users[activePredictUser].squad);
+  const vEl=document.getElementById('ro-squad-verdict');
+  if(verdict){vEl.classList.add('show');vEl.innerHTML=`<span class="verdict-badge ${verdict.verdict}">${verdict.verdict}</span> ${verdict.line}`;}
+  else{vEl.classList.remove('show');}
+  // Next button text
+  const isLast=currentLotIdx===DEMO_PLAYERS.length-1;
+  document.getElementById('next-lot-btn').textContent=isLast?'View Wrapped →':'Next Lot →';
+  document.getElementById('reveal-overlay').classList.add('show');
+}
+
+function closeReveal(){
+  document.getElementById('reveal-overlay').classList.remove('show');
+  document.getElementById('ro-iq-fill').style.width='0%';
+  const isLast=currentLotIdx===DEMO_PLAYERS.length-1;
+  currentLotIdx++;
+  renderCurrentLot();
+  renderLeaderboard();
+  if(isLast){document.getElementById('go-wrapped-btn').disabled=false;goPhase('wrapped');}
+}
+
+function renderLeaderboard(){
+  const sorted = users.filter(u=>u.joined).sort((a,b)=>b.score-a.score);
+  let html='';
+  sorted.forEach((u,i)=>{
+    const rank=i+1;
+    html+=`<div class="lb-row"><div class="lb-rank r${rank}">#${rank}</div><div class="lb-name">${u.name}</div><div class="lb-score">${u.score} pts</div></div>`;
+  });
+  document.getElementById('lb-list').innerHTML=html||'<div style="font-size:12px;color:var(--muted)">No scores yet.</div>';
+}
+
+// ══════════════════════════════════════════════
+// WRAPPED
+// ══════════════════════════════════════════════
+let activeWrappedUser=0;
+function initWrapped(){
+  activeWrappedUser=users.findIndex(u=>u.joined);
+  buildWrappedTabs();
+  renderWrapped();
+}
+
+function buildWrappedTabs(){
+  const el=document.getElementById('wrapped-user-tabs');
+  el.innerHTML='';
+  users.forEach((u,i)=>{
+    if(!u.joined) return;
+    const btn=document.createElement('button');
+    btn.className='user-tab'+(i===activeWrappedUser?' active':'');
+    btn.textContent=u.name;
+    btn.onclick=()=>{activeWrappedUser=i;buildWrappedTabs();renderWrapped();};
+    el.appendChild(btn);
+  });
+}
+
+function renderWrapped(){
+  const u=users[activeWrappedUser];
+  const preds=Object.values(u.predictions);
+  const lots=preds.length;
+  if(lots===0){document.getElementById('wrapped-content').innerHTML='<div style="color:var(--muted);font-size:14px;padding:2rem 0">No predictions yet. Play through the auction first.</div>';return;}
+
+  // Stats
+  const exact=preds.filter(p=>p.band.outcome==='exact').length;
+  const close=preds.filter(p=>p.band.outcome==='close').length;
+  const sfoOk=preds.filter(p=>p.sfo.correct).length;
+  const iqVals=preds.map(p=>p.iq);
+  const overallIQ=Math.round(iqVals.reduce((a,b)=>a+b,0)/iqVals.length);
+  const iqLabel=overallIQ>=90?'Elite Analyst':overallIQ>=75?'Sharp Scout':overallIQ>=50?'Solid GM':overallIQ>=25?'Learning the Ropes':'Keep Playing';
+
+  // Best / worst
+  const best=preds.reduce((a,b)=>a.total>b.total?a:b);
+  const worst=preds.reduce((a,b)=>a.total<b.total?a:b);
+
+  // Archetype
+  const stealCalls=preds.filter(p=>p.pred.sfo==='Steal');
+  const stealHits=stealCalls.filter(p=>p.sfo.correct);
+  const stealHitRate=stealCalls.length?stealHits.length/stealCalls.length:0;
+  const overpayLean=preds.filter(p=>['10-15','15+'].includes(p.pred.band)).length/lots;
+  const frAcc=preds.filter(p=>p.frPts>0).length/lots;
+  let archetype='Franchise Builder',archLine='A steady, balanced auction mind.';
+  if(stealHitRate>=0.6){archetype='Moneyball Scout';archLine='You find value others miss.';}
+  else if(overpayLean>=0.5){archetype='Aggressive Bidder';archLine='You go big and chase the marquee names.';}
+  else if(frAcc>=0.4){archetype='Franchise Builder';archLine='You read the room better than most.';}
+
+  // Squad verdicts
+  let squadHTML='';
+  u.squad.forEach(pick=>{
+    const demoP=DEMO_PLAYERS.find(p=>p.lot_no===pick.lot_no);
+    const wasRevealed=revealedLots.includes(pick.lot_no);
+    let verdict='pending',vLine='Not revealed yet';
+    if(wasRevealed&&demoP){
+      if(pick.bid>=demoP.winning_price_crore){
+        verdict=demoP.winning_price_crore<=demoP.fair_value_crore*0.8?'bargain':'won';
+        vLine=verdict==='bargain'?`Bargain! ₹${demoP.winning_price_crore}Cr was under fair value.`:`Bought at ₹${demoP.winning_price_crore}Cr.`;
+      } else {
+        verdict=demoP.winning_price_crore>=demoP.fair_value_crore*1.25?'dodged':'missed';
+        vLine=verdict==='dodged'?`${demoP.winning_team} overpaid — you dodged it.`:`${demoP.winning_team} grabbed them at ₹${demoP.winning_price_crore}Cr.`;
+      }
+    }
+    squadHTML+=`<div class="w-verdict-row"><span class="verdict-badge ${verdict}">${verdict}</span><div><div style="font-size:12px;font-weight:500">${pick.player_name}</div><div style="font-size:11px;color:var(--muted)">${vLine}</div></div></div>`;
+  });
+
+  const bestLine=best.band.outcome==='exact'&&best.sfo.correct?`You nailed ${best.player.player_name}'s band and the SFO call.`:`Your best player was ${best.player.player_name} (${best.total} pts).`;
+  const worstLine=worst===best?`Only one player predicted.`:`Toughest player: ${worst.player.player_name} — the crowd read it better.`;
+
+  document.getElementById('wrapped-content').innerHTML=`
+    <div class="wrapped-main fade-up">
+      <div class="w-iq">${overallIQ}<span style="font-size:36px">th</span></div>
+      <div class="w-iq-label">Auction IQ · ${iqLabel}</div>
+      <div class="w-arch">
+        <div class="w-arch-name">${archetype}</div>
+        <div class="w-arch-line">${archLine}</div>
+      </div>
+      <div class="w-stats">
+        <div class="ws"><div class="ws-num">${lots}</div><div class="ws-lbl">Players predicted</div></div>
+        <div class="ws"><div class="ws-num">${Math.round(exact/lots*100)}%</div><div class="ws-lbl">Band accuracy</div></div>
+        <div class="ws"><div class="ws-num">${u.score}</div><div class="ws-lbl">Total pts</div></div>
+      </div>
+      <div class="w-calls">
+        🏆 <strong>Best:</strong> ${bestLine}<br><br>
+        😬 <strong>Toughest:</strong> ${worstLine}
+      </div>
+    </div>
+    <div class="wrapped-side fade-up">
+      <div class="w-squad-card">
+        <div style="font-size:11px;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-bottom:.75rem;letter-spacing:.06em">SHADOW SQUAD VERDICTS</div>
+        ${squadHTML||'<div style="font-size:12px;color:var(--muted)">No squad built.</div>'}
+      </div>
+      <div class="card-sm">
+        <div style="font-size:11px;color:var(--muted);font-family:\'JetBrains Mono\',monospace;margin-bottom:.5rem;letter-spacing:.06em">ACCURACY BREAKDOWN</div>
+        <div style="display:flex;flex-direction:column;gap:.3rem">
+          <div style="display:flex;justify-content:space-between;font-size:12px"><span style="color:var(--muted)">Exact band</span><span style="color:var(--green);font-family:\'JetBrains Mono\',monospace">${exact} / ${lots}</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:12px"><span style="color:var(--muted)">Close band (±1)</span><span style="color:var(--gold);font-family:\'JetBrains Mono\',monospace">${close} / ${lots}</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:12px"><span style="color:var(--muted)">SFO correct</span><span style="color:var(--green);font-family:\'JetBrains Mono\',monospace">${sfoOk} / ${lots}</span></div>
+        </div>
+      </div>
+    </div>`;
+}
+
+// ══════════════════════════════════════════════
+// UTILS
+// ══════════════════════════════════════════════
+function showMsg(id,msg,color){
+  const el=document.getElementById(id);
+  if(el){el.textContent=msg;el.style.color=color;setTimeout(()=>{if(el.textContent===msg)el.textContent='';},3000);}
+}
+
+function resetAll(){
+  users=[{name:'',joined:false,squad:[],predictions:{},score:0},{name:'',joined:false,squad:[],predictions:{},score:0},{name:'',joined:false,squad:[],predictions:{},score:0}];
+  activeSquadUser=0;activePredictUser=0;currentLotIdx=0;revealedLots=[];currentPredictions={};selBand=selTeam=selSFO=null;
+  location.reload();
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,578 @@
+lot_no,player_name,country,winning_team,previous_team,source_team_raw,base_price_crore,base_price_label,winning_price_crore,winning_price_label,auction_result,source_status,_sample_role,_sample_capped
+1,Glenn Kishan,South Africa,PBKS,PBKS,PBKS,1.0,₹1.0 Cr,1.31,₹1.31 Cr,Won,Sold,Bowler,False
+2,Liam Coetzee,India,CSK,GT,GT,0.75,₹0.75 Cr,1.54,₹1.54 Cr,Won,Sold,Bowler,False
+3,Travis Yadav,Australia,CSK,SRH,SRH,2.0,₹2.0 Cr,27.0,₹27.0 Cr,Won,Sold,All-Rounder,True
+4,Shubman Klaasen,Australia,,SRH,SRH,0.5,₹0.5 Cr,,,Lost,Unsold,All-Rounder,False
+5,Wanindu Coetzee,India,SRH,SRH,SRH,1.5,₹1.5 Cr,8.38,₹8.38 Cr,Won,Sold,Bowler,True
+6,Marcus Patel,India,SRH,KKR,KKR,0.3,₹0.3 Cr,2.09,₹2.09 Cr,Won,Sold,All-Rounder,True
+7,Faf Rabada,India,CSK,PBKS,PBKS,0.3,₹0.3 Cr,1.95,₹1.95 Cr,Won,Sold,Bowler,True
+8,Liam Kohli,India,LSG,RR,RR,0.3,₹0.3 Cr,1.87,₹1.87 Cr,Won,Sold,Bowler,True
+9,Sanju Kumar,India,SRH,RCB,RCB,0.75,₹0.75 Cr,3.83,₹3.83 Cr,Won,Sold,Batter,True
+10,Ishan Buttler,India,LSG,GT,GT,1.0,₹1.0 Cr,4.1,₹4.1 Cr,Won,Sold,Batter,True
+11,Kuldeep Theekshana,India,,RR,RR,0.75,₹0.75 Cr,,,Lost,Unsold,Bowler,True
+12,Arshdeep Conway,West Indies,CSK,CSK,CSK,2.0,₹2.0 Cr,27.0,₹27.0 Cr,Won,Sold,All-Rounder,True
+13,Rashid Maxwell,India,PBKS,SRH,SRH,0.75,₹0.75 Cr,2.18,₹2.18 Cr,Won,Sold,Batter,True
+14,Rashid Kishan,Australia,KKR,MI,MI,0.3,₹0.3 Cr,0.67,₹0.67 Cr,Won,Sold,Bowler,False
+15,Ishan Theekshana,India,CSK,RCB,RCB,2.0,₹2.0 Cr,5.71,₹5.71 Cr,Won,Sold,Bowler,True
+16,Wanindu Jadeja,India,SRH,DC,DC,0.5,₹0.5 Cr,3.64,₹3.64 Cr,Won,Sold,All-Rounder,True
+17,Rashid Plessis,India,MI,KKR,KKR,0.3,₹0.3 Cr,3.14,₹3.14 Cr,Won,Sold,Bowler,True
+18,Shubman Rabada,India,CSK,RCB,RCB,1.0,₹1.0 Cr,1.2,₹1.2 Cr,Won,Sold,Bowler,False
+19,Suryakumar Yadav,India,LSG,LSG,LSG,0.5,₹0.5 Cr,3.57,₹3.57 Cr,Won,Sold,All-Rounder,False
+20,Mukesh Iyer,India,DC,MI,MI,1.5,₹1.5 Cr,2.27,₹2.27 Cr,Won,Sold,Bowler,False
+21,Rohit Gill,South Africa,RCB,LSG,LSG,0.3,₹0.3 Cr,2.14,₹2.14 Cr,Won,Sold,Bowler,True
+22,Avesh Starc,New Zealand,LSG,KKR,KKR,0.75,₹0.75 Cr,6.51,₹6.51 Cr,Won,Sold,Batter,True
+23,Faf Boult,India,RR,LSG,LSG,0.3,₹0.3 Cr,0.71,₹0.71 Cr,Won,Sold,Batter,True
+24,Glenn Plessis,India,SRH,MI,MI,1.0,₹1.0 Cr,1.65,₹1.65 Cr,Won,Sold,All-Rounder,False
+25,Shubman Pooran,Afghanistan,,PBKS,PBKS,0.3,₹0.3 Cr,,,Lost,Unsold,Batter,False
+26,Rashid Gill,Afghanistan,,SRH,SRH,1.0,₹1.0 Cr,,,Lost,Unsold,Bowler,False
+27,Rishabh Plessis,New Zealand,SRH,LSG,LSG,0.75,₹0.75 Cr,5.69,₹5.69 Cr,Won,Sold,All-Rounder,True
+28,Virat Buttler,New Zealand,,GT,GT,0.3,₹0.3 Cr,,,Lost,Unsold,Bowler,True
+29,Mukesh Gill,India,,DC,DC,0.3,₹0.3 Cr,,,Lost,Unsold,All-Rounder,True
+30,Matheesha Starc,India,KKR,GT,GT,0.3,₹0.3 Cr,2.07,₹2.07 Cr,Won,Sold,Batter,True
+31,Ravindra Kohli,West Indies,SRH,LSG,LSG,0.3,₹0.3 Cr,5.7,₹5.7 Cr,Won,Sold,All-Rounder,True
+32,Nicholas Archer,India,,GT,GT,1.5,₹1.5 Cr,,,Lost,Unsold,Bowler,True
+33,Mukesh Curran,Afghanistan,LSG,LSG,LSG,0.75,₹0.75 Cr,3.17,₹3.17 Cr,Won,Sold,All-Rounder,False
+34,Shreyas Pooran,Australia,DC,KKR,KKR,0.5,₹0.5 Cr,6.41,₹6.41 Cr,Won,Sold,Batter,True
+35,Nicholas Buttler,India,LSG,KKR,KKR,2.0,₹2.0 Cr,27.0,₹27.0 Cr,Won,Sold,All-Rounder,True
+36,Liam Conway,South Africa,DC,RR,RR,0.3,₹0.3 Cr,0.41,₹0.41 Cr,Won,Sold,Bowler,False
+37,Mitchell Maxwell,India,SRH,MI,MI,0.3,₹0.3 Cr,1.02,₹1.02 Cr,Won,Sold,Batter,False
+38,Jos Buttler,South Africa,CSK,PBKS,PBKS,0.75,₹0.75 Cr,6.88,₹6.88 Cr,Won,Sold,Wicketkeeper,True
+39,Quinton Gill,India,,SRH,SRH,0.5,₹0.5 Cr,,,Lost,Unsold,All-Rounder,False
+40,Kagiso Jadeja,India,PBKS,GT,GT,1.0,₹1.0 Cr,6.72,₹6.72 Cr,Won,Sold,Bowler,True
+41,Gerald Ferguson,India,DC,MI,MI,0.3,₹0.3 Cr,5.98,₹5.98 Cr,Won,Sold,Batter,True
+42,Liam Green,South Africa,,RCB,RCB,2.0,₹2.0 Cr,,,Lost,Unsold,Bowler,True
+43,Arshdeep Sharma,India,LSG,RR,RR,0.3,₹0.3 Cr,0.3,₹0.3 Cr,Won,Sold,Bowler,False
+44,Rashid Pathirana,West Indies,,KKR,KKR,2.0,₹2.0 Cr,,,Lost,Unsold,All-Rounder,True
+45,Quinton Archer,Australia,,GT,GT,1.5,₹1.5 Cr,,,Lost,Unsold,Bowler,True
+46,Jasprit Patel,West Indies,LSG,MI,MI,0.3,₹0.3 Cr,1.0,₹1.0 Cr,Won,Sold,Bowler,True
+47,Mukesh Bumrah,India,,GT,GT,1.0,₹1.0 Cr,,,Lost,Unsold,All-Rounder,False
+48,Mohammed Pant,India,,CSK,CSK,0.75,₹0.75 Cr,,,Lost,Unsold,Bowler,False
+49,Ishan Samson,Bangladesh,SRH,PBKS,PBKS,0.75,₹0.75 Cr,4.8,₹4.8 Cr,Won,Sold,Bowler,True
+50,Jasprit Ferguson,India,,CSK,CSK,1.0,₹1.0 Cr,,,Lost,Unsold,Wicketkeeper,False
+51,Shubman Gill,India,SRH,LSG,LSG,0.75,₹0.75 Cr,3.53,₹3.53 Cr,Won,Sold,Bowler,False
+52,Nicholas Bumrah,India,SRH,MI,MI,0.5,₹0.5 Cr,2.39,₹2.39 Cr,Won,Sold,Batter,True
+53,Mitchell Hasaranga,India,DC,KKR,KKR,0.5,₹0.5 Cr,3.56,₹3.56 Cr,Won,Sold,Batter,True
+54,Heinrich Starc,Australia,KKR,DC,DC,1.0,₹1.0 Cr,4.49,₹4.49 Cr,Won,Sold,Bowler,True
+55,Tilak Buttler,England,GT,DC,DC,0.5,₹0.5 Cr,1.08,₹1.08 Cr,Won,Sold,All-Rounder,False
+56,Axar Pandya,India,,PBKS,PBKS,0.3,₹0.3 Cr,,,Lost,Unsold,Batter,False
+57,Glenn Samson,India,,PBKS,PBKS,0.5,₹0.5 Cr,,,Lost,Unsold,All-Rounder,False
+58,Kuldeep Sharma,Afghanistan,RR,LSG,LSG,0.5,₹0.5 Cr,0.74,₹0.74 Cr,Won,Sold,Wicketkeeper,False
+59,Glenn Maxwell,India,LSG,GT,GT,0.3,₹0.3 Cr,2.46,₹2.46 Cr,Won,Sold,Bowler,True
+60,Jofra Ferguson,India,,RCB,RCB,0.5,₹0.5 Cr,,,Lost,Unsold,Batter,False
+61,Nicholas Brevis,India,GT,CSK,CSK,0.75,₹0.75 Cr,0.85,₹0.85 Cr,Won,Sold,Batter,False
+62,Nicholas Varma,Australia,LSG,RR,RR,0.3,₹0.3 Cr,0.8,₹0.8 Cr,Won,Sold,Bowler,False
+63,Avesh Coetzee,South Africa,DC,SRH,SRH,1.5,₹1.5 Cr,2.96,₹2.96 Cr,Won,Sold,All-Rounder,False
+64,Mohammed Sharma,India,,DC,DC,0.75,₹0.75 Cr,,,Lost,Unsold,Bowler,False
+65,Marcus Pathirana,Sri Lanka,RR,DC,DC,0.75,₹0.75 Cr,5.51,₹5.51 Cr,Won,Sold,Bowler,True
+66,Virat Gill,Australia,GT,SRH,SRH,1.5,₹1.5 Cr,2.08,₹2.08 Cr,Won,Sold,Bowler,False
+67,Kagiso Varma,England,PBKS,LSG,LSG,0.75,₹0.75 Cr,10.1,₹10.1 Cr,Won,Sold,Bowler,False
+68,Kagiso Pant,India,PBKS,CSK,CSK,0.5,₹0.5 Cr,1.77,₹1.77 Cr,Won,Sold,Batter,False
+69,Rishabh Ferguson,India,,KKR,KKR,1.5,₹1.5 Cr,,,Lost,Unsold,All-Rounder,False
+70,Liam Maxwell,England,RCB,RR,RR,1.0,₹1.0 Cr,3.53,₹3.53 Cr,Won,Sold,All-Rounder,False
+71,Kuldeep Curran,India,DC,CSK,CSK,0.5,₹0.5 Cr,3.49,₹3.49 Cr,Won,Sold,Bowler,True
+72,Marcus Kumar,India,SRH,GT,GT,0.3,₹0.3 Cr,2.87,₹2.87 Cr,Won,Sold,Bowler,True
+73,Jofra Bumrah,Bangladesh,SRH,GT,GT,0.3,₹0.3 Cr,1.15,₹1.15 Cr,Won,Sold,Batter,True
+74,Kuldeep Maxwell,India,GT,SRH,SRH,0.3,₹0.3 Cr,1.02,₹1.02 Cr,Won,Sold,Bowler,True
+75,Travis Pathirana,Afghanistan,KKR,SRH,SRH,0.3,₹0.3 Cr,0.84,₹0.84 Cr,Won,Sold,All-Rounder,False
+76,Ravindra Pandya,India,CSK,PBKS,PBKS,0.3,₹0.3 Cr,1.57,₹1.57 Cr,Won,Sold,Bowler,True
+77,Ishan Rabada,South Africa,,DC,DC,0.5,₹0.5 Cr,,,Lost,Unsold,All-Rounder,True
+78,Virat Siraj,India,MI,PBKS,PBKS,0.5,₹0.5 Cr,1.0,₹1.0 Cr,Won,Sold,Bowler,False
+79,Sam Klaasen,India,CSK,PBKS,PBKS,0.5,₹0.5 Cr,0.5,₹0.5 Cr,Won,Sold,Bowler,False
+80,Rishabh Starc,India,CSK,MI,MI,0.5,₹0.5 Cr,3.09,₹3.09 Cr,Won,Sold,Batter,True
+81,Liam Klaasen,India,SRH,LSG,LSG,1.0,₹1.0 Cr,12.62,₹12.62 Cr,Won,Sold,Batter,True
+82,Rohit Iyer,India,,RR,RR,0.3,₹0.3 Cr,,,Lost,Unsold,Batter,False
+83,Jos Siraj,West Indies,CSK,MI,MI,0.3,₹0.3 Cr,0.96,₹0.96 Cr,Won,Sold,Batter,True
+84,Mohammed Siraj,New Zealand,RCB,DC,DC,0.75,₹0.75 Cr,1.43,₹1.43 Cr,Won,Sold,Batter,False
+85,Yuzvendra Starc,India,RCB,LSG,LSG,0.5,₹0.5 Cr,1.63,₹1.63 Cr,Won,Sold,Bowler,False
+86,Marcus Iyer,India,GT,SRH,SRH,0.5,₹0.5 Cr,1.99,₹1.99 Cr,Won,Sold,Batter,True
+87,Quinton Starc,India,,PBKS,PBKS,0.3,₹0.3 Cr,,,Lost,Unsold,All-Rounder,False
+88,Sanju Cummins,Bangladesh,GT,CSK,CSK,2.0,₹2.0 Cr,14.06,₹14.06 Cr,Won,Sold,Batter,True
+89,Virat Boult,Australia,CSK,MI,MI,0.75,₹0.75 Cr,6.02,₹6.02 Cr,Won,Sold,Batter,True
+90,Mohammed Livingstone,India,PBKS,DC,DC,0.75,₹0.75 Cr,5.33,₹5.33 Cr,Won,Sold,All-Rounder,True
+91,Sam Plessis,Bangladesh,,PBKS,PBKS,0.3,₹0.3 Cr,,,Lost,Unsold,Bowler,False
+92,David Warner,Australia,GT,KKR,KKR,0.3,₹0.3 Cr,0.43,₹0.43 Cr,Won,Sold,Batter,False
+93,Liam Brevis,India,RR,GT,GT,1.0,₹1.0 Cr,1.99,₹1.99 Cr,Won,Sold,Bowler,False
+94,Tilak Warner,India,RR,PBKS,PBKS,0.3,₹0.3 Cr,3.42,₹3.42 Cr,Won,Sold,Batter,False
+95,Tilak Livingstone,India,KKR,KKR,KKR,0.75,₹0.75 Cr,20.97,₹20.97 Cr,Won,Sold,Bowler,True
+96,Sam Varma,India,DC,MI,MI,2.0,₹2.0 Cr,7.61,₹7.61 Cr,Won,Sold,All-Rounder,True
+97,Heinrich Siraj,India,CSK,RCB,RCB,0.5,₹0.5 Cr,0.82,₹0.82 Cr,Won,Sold,Batter,False
+98,Matheesha Samson,India,RR,RR,RR,0.3,₹0.3 Cr,3.73,₹3.73 Cr,Won,Sold,Batter,True
+99,Travis Starc,India,SRH,LSG,LSG,0.75,₹0.75 Cr,2.0,₹2.0 Cr,Won,Sold,Batter,True
+100,Sanju Gill,India,GT,MI,MI,0.75,₹0.75 Cr,1.33,₹1.33 Cr,Won,Sold,Batter,False
+101,Suryakumar Plessis,South Africa,RR,PBKS,PBKS,0.3,₹0.3 Cr,1.07,₹1.07 Cr,Won,Sold,Batter,False
+102,Ishan Kohli,India,KKR,SRH,SRH,1.5,₹1.5 Cr,4.96,₹4.96 Cr,Won,Sold,Batter,False
+103,Shubman Samson,West Indies,KKR,LSG,LSG,0.5,₹0.5 Cr,1.63,₹1.63 Cr,Won,Sold,All-Rounder,False
+104,Rohit Singh,Afghanistan,GT,MI,MI,0.3,₹0.3 Cr,0.42,₹0.42 Cr,Won,Sold,Bowler,False
+105,Nicholas Pathirana,West Indies,,MI,MI,0.5,₹0.5 Cr,,,Lost,Unsold,Batter,False
+106,Rashid Stoinis,South Africa,PBKS,CSK,CSK,0.3,₹0.3 Cr,1.22,₹1.22 Cr,Won,Sold,All-Rounder,False
+107,Matheesha Patel,England,,DC,DC,2.0,₹2.0 Cr,,,Lost,Unsold,All-Rounder,True
+108,Axar Kumar,India,RR,RCB,RCB,0.3,₹0.3 Cr,1.5,₹1.5 Cr,Won,Sold,Bowler,True
+109,Nicholas Boult,India,LSG,PBKS,PBKS,0.5,₹0.5 Cr,3.12,₹3.12 Cr,Won,Sold,Bowler,False
+110,Gerald Hasaranga,India,KKR,CSK,CSK,2.0,₹2.0 Cr,3.29,₹3.29 Cr,Won,Sold,All-Rounder,False
+111,Kagiso Kumar,England,MI,KKR,KKR,1.0,₹1.0 Cr,2.17,₹2.17 Cr,Won,Sold,Bowler,False
+112,Aarav Green,India,KKR,KKR,KKR,0.3,₹0.3 Cr,1.22,₹1.22 Cr,Won,Sold,Bowler,True
+113,Shubman Patel,India,PBKS,KKR,KKR,0.3,₹0.3 Cr,0.6,₹0.6 Cr,Won,Sold,All-Rounder,False
+114,Mohammed Iyer,Australia,PBKS,RCB,RCB,0.75,₹0.75 Cr,5.43,₹5.43 Cr,Won,Sold,Wicketkeeper,True
+115,Pat Samson,India,LSG,RR,RR,1.0,₹1.0 Cr,4.71,₹4.71 Cr,Won,Sold,Wicketkeeper,True
+116,Jasprit Kumar,Sri Lanka,GT,SRH,SRH,0.75,₹0.75 Cr,7.1,₹7.1 Cr,Won,Sold,All-Rounder,True
+117,Jasprit Stoinis,Sri Lanka,RR,LSG,LSG,1.0,₹1.0 Cr,15.05,₹15.05 Cr,Won,Sold,All-Rounder,False
+118,Aarav Kohli,India,DC,RR,RR,0.5,₹0.5 Cr,0.64,₹0.64 Cr,Won,Sold,Batter,False
+119,Suryakumar Ferguson,South Africa,RCB,KKR,KKR,1.0,₹1.0 Cr,8.43,₹8.43 Cr,Won,Sold,All-Rounder,True
+120,Mohammed Buttler,India,RCB,MI,MI,2.0,₹2.0 Cr,2.71,₹2.71 Cr,Won,Sold,Bowler,False
+121,Trent Curran,Australia,RCB,GT,GT,0.3,₹0.3 Cr,0.53,₹0.53 Cr,Won,Sold,Batter,False
+122,Mukesh Chahal,Bangladesh,RCB,RR,RR,0.3,₹0.3 Cr,1.07,₹1.07 Cr,Won,Sold,Wicketkeeper,False
+123,David Hasaranga,India,RCB,SRH,SRH,1.0,₹1.0 Cr,16.92,₹16.92 Cr,Won,Sold,Bowler,True
+124,Virat Starc,India,RCB,GT,GT,1.5,₹1.5 Cr,8.33,₹8.33 Cr,Won,Sold,All-Rounder,True
+125,Rohit Kishan,India,,CSK,CSK,0.3,₹0.3 Cr,,,Lost,Unsold,Bowler,False
+126,Kuldeep Livingstone,New Zealand,RCB,DC,DC,1.0,₹1.0 Cr,2.67,₹2.67 Cr,Won,Sold,All-Rounder,False
+127,Faf Pant,India,MI,LSG,LSG,0.5,₹0.5 Cr,0.81,₹0.81 Cr,Won,Sold,All-Rounder,False
+128,Suryakumar Green,India,KKR,LSG,LSG,0.5,₹0.5 Cr,2.1,₹2.1 Cr,Won,Sold,Batter,False
+129,David Rabada,Afghanistan,DC,CSK,CSK,0.3,₹0.3 Cr,2.51,₹2.51 Cr,Won,Sold,All-Rounder,True
+130,Rishabh Coetzee,New Zealand,SRH,RCB,RCB,0.3,₹0.3 Cr,1.41,₹1.41 Cr,Won,Sold,All-Rounder,True
+131,Shreyas Sharma,India,CSK,GT,GT,0.75,₹0.75 Cr,4.67,₹4.67 Cr,Won,Sold,Bowler,True
+132,Kuldeep Bumrah,India,CSK,SRH,SRH,0.3,₹0.3 Cr,1.64,₹1.64 Cr,Won,Sold,All-Rounder,False
+133,Hardik Kishan,India,MI,DC,DC,0.3,₹0.3 Cr,0.3,₹0.3 Cr,Won,Sold,Batter,False
+134,Wanindu Green,New Zealand,RCB,SRH,SRH,0.3,₹0.3 Cr,2.33,₹2.33 Cr,Won,Sold,Batter,True
+135,Rishabh Archer,Sri Lanka,PBKS,LSG,LSG,0.3,₹0.3 Cr,1.38,₹1.38 Cr,Won,Sold,Batter,True
+136,Jofra Yadav,India,GT,LSG,LSG,0.5,₹0.5 Cr,2.32,₹2.32 Cr,Won,Sold,Wicketkeeper,True
+137,Rashid Iyer,Afghanistan,MI,SRH,SRH,2.0,₹2.0 Cr,4.65,₹4.65 Cr,Won,Sold,Bowler,False
+138,Tilak Ferguson,India,RR,GT,GT,0.75,₹0.75 Cr,0.93,₹0.93 Cr,Won,Sold,Batter,False
+139,Shreyas Iyer,Sri Lanka,DC,KKR,KKR,0.5,₹0.5 Cr,2.53,₹2.53 Cr,Won,Sold,Bowler,True
+140,Jos Livingstone,India,,PBKS,PBKS,0.3,₹0.3 Cr,,,Lost,Unsold,Bowler,True
+141,Tilak Gill,India,GT,PBKS,PBKS,0.75,₹0.75 Cr,2.5,₹2.5 Cr,Won,Sold,All-Rounder,False
+142,Liam Siraj,India,MI,LSG,LSG,1.0,₹1.0 Cr,4.48,₹4.48 Cr,Won,Sold,Batter,True
+143,Ishan Maxwell,India,RR,SRH,SRH,0.5,₹0.5 Cr,1.87,₹1.87 Cr,Won,Sold,Batter,False
+144,Shreyas Gill,India,DC,PBKS,PBKS,2.0,₹2.0 Cr,3.44,₹3.44 Cr,Won,Sold,Bowler,False
+145,Sanju Kishan,South Africa,MI,MI,MI,2.0,₹2.0 Cr,6.38,₹6.38 Cr,Won,Sold,Bowler,False
+146,Trent Boult,South Africa,SRH,MI,MI,0.5,₹0.5 Cr,7.94,₹7.94 Cr,Won,Sold,All-Rounder,True
+147,Arshdeep Kishan,Australia,,MI,MI,0.3,₹0.3 Cr,,,Lost,Unsold,Bowler,False
+148,Mitchell Plessis,India,CSK,RCB,RCB,2.0,₹2.0 Cr,10.67,₹10.67 Cr,Won,Sold,Bowler,True
+149,Rashid Kohli,West Indies,LSG,SRH,SRH,0.5,₹0.5 Cr,2.79,₹2.79 Cr,Won,Sold,Bowler,True
+150,Marcus Cummins,England,MI,LSG,LSG,0.3,₹0.3 Cr,4.06,₹4.06 Cr,Won,Sold,Batter,False
+151,Glenn Patel,West Indies,MI,PBKS,PBKS,0.5,₹0.5 Cr,1.83,₹1.83 Cr,Won,Sold,Bowler,True
+152,Jofra Curran,Afghanistan,MI,RR,RR,1.0,₹1.0 Cr,6.18,₹6.18 Cr,Won,Sold,Batter,False
+153,Ravindra Samson,India,KKR,GT,GT,2.0,₹2.0 Cr,2.0,₹2.0 Cr,Won,Sold,Bowler,False
+154,Axar Yadav,India,CSK,CSK,CSK,1.0,₹1.0 Cr,3.82,₹3.82 Cr,Won,Sold,Batter,True
+155,Ishan Ferguson,India,,KKR,KKR,0.5,₹0.5 Cr,,,Lost,Unsold,Wicketkeeper,True
+156,Pat Plessis,India,GT,CSK,CSK,0.75,₹0.75 Cr,1.28,₹1.28 Cr,Won,Sold,Bowler,False
+157,Faf Gill,Sri Lanka,KKR,GT,GT,0.3,₹0.3 Cr,2.82,₹2.82 Cr,Won,Sold,Bowler,True
+158,Ishan Hasaranga,India,LSG,DC,DC,0.75,₹0.75 Cr,1.55,₹1.55 Cr,Won,Sold,Batter,False
+159,Avesh Conway,India,CSK,LSG,LSG,0.5,₹0.5 Cr,0.64,₹0.64 Cr,Won,Sold,Batter,False
+160,Sam Patel,India,SRH,SRH,SRH,0.75,₹0.75 Cr,7.82,₹7.82 Cr,Won,Sold,Bowler,True
+161,Kagiso Iyer,India,PBKS,SRH,SRH,1.0,₹1.0 Cr,1.87,₹1.87 Cr,Won,Sold,All-Rounder,False
+162,David Buttler,Australia,CSK,KKR,KKR,0.5,₹0.5 Cr,1.47,₹1.47 Cr,Won,Sold,Bowler,False
+163,Mohammed Rabada,India,PBKS,SRH,SRH,0.3,₹0.3 Cr,0.86,₹0.86 Cr,Won,Sold,All-Rounder,True
+164,Marcus Coetzee,Afghanistan,MI,MI,MI,0.3,₹0.3 Cr,2.19,₹2.19 Cr,Won,Sold,Batter,True
+165,Marcus Kishan,India,GT,MI,MI,0.3,₹0.3 Cr,1.38,₹1.38 Cr,Won,Sold,Bowler,True
+166,Shreyas Chahal,India,KKR,CSK,CSK,1.0,₹1.0 Cr,1.6,₹1.6 Cr,Won,Sold,All-Rounder,False
+167,Aarav Maxwell,India,,MI,MI,1.0,₹1.0 Cr,,,Lost,Unsold,Bowler,True
+168,Mukesh Stoinis,India,LSG,RR,RR,1.0,₹1.0 Cr,18.59,₹18.59 Cr,Won,Sold,Bowler,True
+169,Avesh Kumar,West Indies,SRH,SRH,SRH,0.5,₹0.5 Cr,1.2,₹1.2 Cr,Won,Sold,Wicketkeeper,False
+170,Rashid Brevis,India,LSG,PBKS,PBKS,0.3,₹0.3 Cr,0.56,₹0.56 Cr,Won,Sold,Bowler,False
+171,Pat Patel,West Indies,DC,LSG,LSG,0.3,₹0.3 Cr,1.93,₹1.93 Cr,Won,Sold,Batter,True
+172,David Chahal,India,MI,RR,RR,2.0,₹2.0 Cr,5.97,₹5.97 Cr,Won,Sold,Batter,True
+173,Jos Jadeja,South Africa,RCB,LSG,LSG,0.3,₹0.3 Cr,0.44,₹0.44 Cr,Won,Sold,Batter,False
+174,Aarav Rabada,India,,RR,RR,1.0,₹1.0 Cr,,,Lost,Unsold,Bowler,True
+175,Shreyas Siraj,Bangladesh,MI,DC,DC,0.5,₹0.5 Cr,5.34,₹5.34 Cr,Won,Sold,Batter,True
+176,Sanju Plessis,India,MI,MI,MI,1.5,₹1.5 Cr,1.66,₹1.66 Cr,Won,Sold,Bowler,False
+177,Ishan Chahal,Sri Lanka,,SRH,SRH,1.0,₹1.0 Cr,,,Lost,Unsold,Batter,False
+178,Aarav Ferguson,India,MI,RCB,RCB,1.5,₹1.5 Cr,3.63,₹3.63 Cr,Won,Sold,Batter,False
+179,Ishan Bumrah,India,PBKS,SRH,SRH,0.5,₹0.5 Cr,0.91,₹0.91 Cr,Won,Sold,Batter,False
+180,Travis Livingstone,West Indies,RR,CSK,CSK,0.3,₹0.3 Cr,1.24,₹1.24 Cr,Won,Sold,All-Rounder,False
+181,Rohit Archer,India,PBKS,LSG,LSG,1.0,₹1.0 Cr,1.96,₹1.96 Cr,Won,Sold,All-Rounder,False
+182,Nicholas Curran,England,KKR,GT,GT,0.3,₹0.3 Cr,2.02,₹2.02 Cr,Won,Sold,Batter,True
+183,Aarav Hasaranga,West Indies,LSG,SRH,SRH,0.75,₹0.75 Cr,0.94,₹0.94 Cr,Won,Sold,Batter,False
+184,Sanju Stoinis,West Indies,,DC,DC,0.75,₹0.75 Cr,,,Lost,Unsold,Wicketkeeper,True
+185,Rashid Ferguson,India,RCB,GT,GT,2.0,₹2.0 Cr,20.96,₹20.96 Cr,Won,Sold,All-Rounder,True
+186,Liam Livingstone,India,GT,GT,GT,0.75,₹0.75 Cr,0.9,₹0.9 Cr,Won,Sold,Batter,False
+187,Yuzvendra Cummins,India,PBKS,CSK,CSK,1.0,₹1.0 Cr,3.5,₹3.5 Cr,Won,Sold,Wicketkeeper,True
+188,Travis Gill,South Africa,LSG,DC,DC,0.3,₹0.3 Cr,11.33,₹11.33 Cr,Won,Sold,Batter,True
+189,Mohammed Theekshana,India,,SRH,SRH,1.5,₹1.5 Cr,,,Lost,Unsold,Bowler,True
+190,Virat Pandya,West Indies,,KKR,KKR,0.3,₹0.3 Cr,,,Lost,Unsold,Wicketkeeper,True
+191,Glenn Ferguson,India,SRH,LSG,LSG,0.75,₹0.75 Cr,2.31,₹2.31 Cr,Won,Sold,Batter,False
+192,Nicholas Klaasen,India,PBKS,PBKS,PBKS,0.3,₹0.3 Cr,0.66,₹0.66 Cr,Won,Sold,Bowler,False
+193,Jofra Gill,Australia,RR,KKR,KKR,1.0,₹1.0 Cr,12.49,₹12.49 Cr,Won,Sold,All-Rounder,True
+194,Kuldeep Klaasen,India,,RCB,RCB,0.75,₹0.75 Cr,,,Lost,Unsold,Batter,False
+195,Nicholas Pooran,Australia,SRH,KKR,KKR,0.5,₹0.5 Cr,2.98,₹2.98 Cr,Won,Sold,All-Rounder,True
+196,Gerald Buttler,India,LSG,PBKS,PBKS,1.0,₹1.0 Cr,3.54,₹3.54 Cr,Won,Sold,All-Rounder,False
+197,Jos Head,India,SRH,KKR,KKR,0.3,₹0.3 Cr,0.3,₹0.3 Cr,Won,Sold,Bowler,False
+198,Travis Pooran,Afghanistan,PBKS,KKR,KKR,0.3,₹0.3 Cr,2.0,₹2.0 Cr,Won,Sold,Bowler,True
+199,Ravindra Livingstone,India,RR,KKR,KKR,2.0,₹2.0 Cr,9.11,₹9.11 Cr,Won,Sold,Bowler,True
+200,Trent Jadeja,India,RCB,KKR,KKR,1.0,₹1.0 Cr,2.2,₹2.2 Cr,Won,Sold,Wicketkeeper,False
+201,Tilak Cummins,India,RCB,KKR,KKR,0.75,₹0.75 Cr,0.75,₹0.75 Cr,Won,Sold,Wicketkeeper,False
+202,Kagiso Cummins,New Zealand,KKR,CSK,CSK,2.0,₹2.0 Cr,27.0,₹27.0 Cr,Won,Sold,Batter,True
+203,Arshdeep Chahal,India,MI,DC,DC,0.5,₹0.5 Cr,0.52,₹0.52 Cr,Won,Sold,Bowler,False
+204,Mohammed Plessis,New Zealand,MI,MI,MI,1.0,₹1.0 Cr,5.86,₹5.86 Cr,Won,Sold,Bowler,True
+205,Pat Siraj,India,,DC,DC,0.75,₹0.75 Cr,,,Lost,Unsold,Batter,True
+206,Travis Klaasen,India,KKR,SRH,SRH,1.5,₹1.5 Cr,2.08,₹2.08 Cr,Won,Sold,Batter,False
+207,Yuzvendra Pooran,India,PBKS,MI,MI,0.75,₹0.75 Cr,6.21,₹6.21 Cr,Won,Sold,Bowler,False
+208,Wanindu Bumrah,India,DC,CSK,CSK,0.5,₹0.5 Cr,2.17,₹2.17 Cr,Won,Sold,All-Rounder,True
+209,Sanju Pant,India,MI,PBKS,PBKS,0.3,₹0.3 Cr,0.35,₹0.35 Cr,Won,Sold,Bowler,False
+210,Aarav Brevis,New Zealand,DC,MI,MI,2.0,₹2.0 Cr,20.42,₹20.42 Cr,Won,Sold,Wicketkeeper,True
+211,Pat Buttler,Afghanistan,LSG,PBKS,PBKS,0.75,₹0.75 Cr,0.75,₹0.75 Cr,Won,Sold,Wicketkeeper,False
+212,Glenn Cummins,India,PBKS,SRH,SRH,0.3,₹0.3 Cr,0.3,₹0.3 Cr,Won,Sold,Batter,False
+213,David Pant,Afghanistan,DC,KKR,KKR,0.3,₹0.3 Cr,2.38,₹2.38 Cr,Won,Sold,All-Rounder,True
+214,Trent Warner,New Zealand,CSK,RCB,RCB,0.3,₹0.3 Cr,0.4,₹0.4 Cr,Won,Sold,Bowler,False
+215,Ravindra Starc,India,MI,LSG,LSG,0.5,₹0.5 Cr,1.51,₹1.51 Cr,Won,Sold,Batter,False
+216,Avesh Patel,New Zealand,RR,KKR,KKR,0.5,₹0.5 Cr,4.18,₹4.18 Cr,Won,Sold,Bowler,False
+217,Glenn Jadeja,India,DC,MI,MI,0.3,₹0.3 Cr,1.63,₹1.63 Cr,Won,Sold,All-Rounder,True
+218,Wanindu Sharma,India,KKR,RCB,RCB,0.75,₹0.75 Cr,3.74,₹3.74 Cr,Won,Sold,Bowler,True
+219,Hardik Curran,India,,KKR,KKR,0.5,₹0.5 Cr,,,Lost,Unsold,Bowler,True
+220,Matheesha Pathirana,Sri Lanka,LSG,RCB,RCB,1.0,₹1.0 Cr,2.41,₹2.41 Cr,Won,Sold,Batter,False
+221,Nicholas Starc,India,,CSK,CSK,0.3,₹0.3 Cr,,,Lost,Unsold,Bowler,False
+222,Glenn Kohli,India,PBKS,KKR,KKR,0.3,₹0.3 Cr,0.92,₹0.92 Cr,Won,Sold,Wicketkeeper,False
+223,Ravindra Kumar,India,MI,CSK,CSK,2.0,₹2.0 Cr,3.43,₹3.43 Cr,Won,Sold,Wicketkeeper,False
+224,Yuzvendra Hasaranga,India,DC,GT,GT,0.3,₹0.3 Cr,0.37,₹0.37 Cr,Won,Sold,Bowler,False
+225,Liam Pandya,India,RR,RR,RR,0.5,₹0.5 Cr,4.52,₹4.52 Cr,Won,Sold,Bowler,True
+226,David Varma,India,RR,DC,DC,0.3,₹0.3 Cr,2.55,₹2.55 Cr,Won,Sold,Wicketkeeper,True
+227,Ishan Gill,South Africa,DC,MI,MI,1.0,₹1.0 Cr,1.53,₹1.53 Cr,Won,Sold,Wicketkeeper,False
+228,Faf Siraj,India,,DC,DC,0.3,₹0.3 Cr,,,Lost,Unsold,Batter,False
+229,Kuldeep Pant,India,KKR,KKR,KKR,0.3,₹0.3 Cr,1.48,₹1.48 Cr,Won,Sold,Batter,True
+230,Virat Livingstone,India,PBKS,CSK,CSK,2.0,₹2.0 Cr,5.09,₹5.09 Cr,Won,Sold,Batter,False
+231,Matheesha Maxwell,New Zealand,,LSG,LSG,1.0,₹1.0 Cr,,,Lost,Unsold,All-Rounder,True
+232,Faf Patel,India,,PBKS,PBKS,1.0,₹1.0 Cr,,,Lost,Unsold,Bowler,True
+233,Jofra Maxwell,India,RCB,MI,MI,0.3,₹0.3 Cr,1.32,₹1.32 Cr,Won,Sold,Batter,True
+234,Jos Kumar,India,DC,RR,RR,0.3,₹0.3 Cr,1.48,₹1.48 Cr,Won,Sold,Bowler,True
+235,Jasprit Archer,New Zealand,MI,DC,DC,1.0,₹1.0 Cr,10.57,₹10.57 Cr,Won,Sold,Batter,False
+236,Mitchell Chahal,India,,KKR,KKR,0.3,₹0.3 Cr,,,Lost,Unsold,Batter,False
+237,Suryakumar Jadeja,India,RCB,GT,GT,0.75,₹0.75 Cr,2.38,₹2.38 Cr,Won,Sold,Bowler,True
+238,Jofra Conway,India,PBKS,KKR,KKR,0.3,₹0.3 Cr,2.98,₹2.98 Cr,Won,Sold,All-Rounder,True
+239,Suryakumar Rabada,India,KKR,CSK,CSK,0.5,₹0.5 Cr,0.6,₹0.6 Cr,Won,Sold,Wicketkeeper,False
+240,Gerald Green,India,SRH,GT,GT,0.3,₹0.3 Cr,3.97,₹3.97 Cr,Won,Sold,All-Rounder,True
+241,Mukesh Samson,West Indies,,PBKS,PBKS,0.5,₹0.5 Cr,,,Lost,Unsold,Batter,True
+242,Matheesha Livingstone,India,DC,RR,RR,0.3,₹0.3 Cr,1.29,₹1.29 Cr,Won,Sold,Bowler,True
+243,Wanindu Head,India,RR,LSG,LSG,0.75,₹0.75 Cr,3.05,₹3.05 Cr,Won,Sold,Bowler,False
+244,Gerald Stoinis,India,RR,DC,DC,1.0,₹1.0 Cr,3.68,₹3.68 Cr,Won,Sold,Bowler,True
+245,Aarav Chahal,England,RR,PBKS,PBKS,0.3,₹0.3 Cr,1.04,₹1.04 Cr,Won,Sold,All-Rounder,False
+246,Mitchell Stoinis,India,LSG,MI,MI,0.3,₹0.3 Cr,3.12,₹3.12 Cr,Won,Sold,All-Rounder,True
+247,Axar Livingstone,India,LSG,LSG,LSG,1.0,₹1.0 Cr,4.74,₹4.74 Cr,Won,Sold,Batter,True
+248,Pat Pathirana,India,GT,RR,RR,0.5,₹0.5 Cr,2.52,₹2.52 Cr,Won,Sold,Bowler,True
+249,Pat Conway,India,SRH,GT,GT,0.5,₹0.5 Cr,2.86,₹2.86 Cr,Won,Sold,Bowler,True
+250,Suryakumar Kishan,India,,MI,MI,0.3,₹0.3 Cr,,,Lost,Unsold,Batter,True
+251,Shreyas Rabada,India,RCB,DC,DC,1.5,₹1.5 Cr,8.14,₹8.14 Cr,Won,Sold,Bowler,True
+252,Matheesha Brevis,India,,DC,DC,1.0,₹1.0 Cr,,,Lost,Unsold,Batter,True
+253,Sam Buttler,New Zealand,PBKS,RCB,RCB,0.3,₹0.3 Cr,3.13,₹3.13 Cr,Won,Sold,Batter,True
+254,Jofra Klaasen,India,RR,MI,MI,1.5,₹1.5 Cr,13.73,₹13.73 Cr,Won,Sold,Wicketkeeper,True
+255,Liam Samson,India,RCB,PBKS,PBKS,0.75,₹0.75 Cr,5.38,₹5.38 Cr,Won,Sold,Bowler,True
+256,Jos Sharma,India,MI,SRH,SRH,0.3,₹0.3 Cr,0.43,₹0.43 Cr,Won,Sold,All-Rounder,False
+257,Nicholas Samson,India,PBKS,KKR,KKR,0.3,₹0.3 Cr,0.79,₹0.79 Cr,Won,Sold,All-Rounder,False
+258,Yuzvendra Curran,India,DC,RR,RR,0.3,₹0.3 Cr,0.73,₹0.73 Cr,Won,Sold,Bowler,False
+259,Jofra Theekshana,England,LSG,DC,DC,0.3,₹0.3 Cr,0.95,₹0.95 Cr,Won,Sold,All-Rounder,False
+260,Gerald Livingstone,India,,GT,GT,0.3,₹0.3 Cr,,,Lost,Unsold,Bowler,False
+261,Faf Pandya,India,GT,MI,MI,1.5,₹1.5 Cr,11.27,₹11.27 Cr,Won,Sold,All-Rounder,True
+262,Faf Singh,England,RR,GT,GT,1.0,₹1.0 Cr,27.0,₹27.0 Cr,Won,Sold,Bowler,True
+263,Mitchell Livingstone,India,GT,LSG,LSG,0.5,₹0.5 Cr,0.64,₹0.64 Cr,Won,Sold,Batter,False
+264,Rishabh Gill,Australia,PBKS,DC,DC,1.0,₹1.0 Cr,3.46,₹3.46 Cr,Won,Sold,All-Rounder,False
+265,Nicholas Singh,India,GT,RCB,RCB,0.3,₹0.3 Cr,0.32,₹0.32 Cr,Won,Sold,All-Rounder,False
+266,Virat Curran,India,KKR,DC,DC,1.5,₹1.5 Cr,6.57,₹6.57 Cr,Won,Sold,Batter,True
+267,Wanindu Brevis,India,CSK,MI,MI,0.5,₹0.5 Cr,0.5,₹0.5 Cr,Won,Sold,Bowler,False
+268,Sam Warner,South Africa,LSG,KKR,KKR,0.75,₹0.75 Cr,27.0,₹27.0 Cr,Won,Sold,All-Rounder,True
+269,Nicholas Hasaranga,India,SRH,DC,DC,0.5,₹0.5 Cr,0.64,₹0.64 Cr,Won,Sold,Batter,False
+270,Rishabh Jadeja,India,GT,RCB,RCB,0.75,₹0.75 Cr,1.87,₹1.87 Cr,Won,Sold,Wicketkeeper,False
+271,Tilak Rabada,India,,CSK,CSK,0.3,₹0.3 Cr,,,Lost,Unsold,All-Rounder,True
+272,Pat Warner,India,RR,DC,DC,0.3,₹0.3 Cr,0.75,₹0.75 Cr,Won,Sold,Bowler,False
+273,Glenn Varma,England,DC,KKR,KKR,0.75,₹0.75 Cr,2.95,₹2.95 Cr,Won,Sold,Batter,False
+274,Jasprit Buttler,India,DC,DC,DC,2.0,₹2.0 Cr,12.08,₹12.08 Cr,Won,Sold,Bowler,True
+275,Wanindu Stoinis,Australia,CSK,GT,GT,1.0,₹1.0 Cr,8.97,₹8.97 Cr,Won,Sold,Wicketkeeper,True
+276,Rashid Pant,Australia,,SRH,SRH,0.75,₹0.75 Cr,,,Lost,Unsold,All-Rounder,False
+277,Liam Ferguson,India,GT,LSG,LSG,1.5,₹1.5 Cr,1.5,₹1.5 Cr,Won,Sold,Bowler,False
+278,Mukesh Pant,Sri Lanka,GT,MI,MI,0.3,₹0.3 Cr,0.63,₹0.63 Cr,Won,Sold,Batter,False
+279,Shreyas Kumar,South Africa,,SRH,SRH,0.3,₹0.3 Cr,,,Lost,Unsold,All-Rounder,False
+280,Shubman Head,Sri Lanka,,MI,MI,0.75,₹0.75 Cr,,,Lost,Unsold,Wicketkeeper,True
+281,Suryakumar Singh,India,MI,RR,RR,1.5,₹1.5 Cr,15.82,₹15.82 Cr,Won,Sold,Bowler,True
+282,Sanju Hasaranga,New Zealand,MI,GT,GT,2.0,₹2.0 Cr,7.57,₹7.57 Cr,Won,Sold,Wicketkeeper,False
+283,Glenn Chahal,India,RR,DC,DC,0.3,₹0.3 Cr,1.54,₹1.54 Cr,Won,Sold,Batter,True
+284,Liam Jadeja,India,RCB,SRH,SRH,0.3,₹0.3 Cr,0.44,₹0.44 Cr,Won,Sold,Batter,False
+285,David Pandya,West Indies,KKR,RCB,RCB,0.75,₹0.75 Cr,6.23,₹6.23 Cr,Won,Sold,All-Rounder,False
+286,Jasprit Chahal,Sri Lanka,LSG,SRH,SRH,0.3,₹0.3 Cr,1.02,₹1.02 Cr,Won,Sold,Bowler,False
+287,Mitchell Siraj,South Africa,RCB,SRH,SRH,0.75,₹0.75 Cr,9.14,₹9.14 Cr,Won,Sold,All-Rounder,True
+288,Ravindra Curran,India,RR,DC,DC,0.5,₹0.5 Cr,2.47,₹2.47 Cr,Won,Sold,All-Rounder,False
+289,Liam Chahal,India,SRH,PBKS,PBKS,0.5,₹0.5 Cr,9.59,₹9.59 Cr,Won,Sold,Bowler,True
+290,Wanindu Rabada,South Africa,PBKS,MI,MI,1.5,₹1.5 Cr,12.91,₹12.91 Cr,Won,Sold,Batter,True
+291,Jasprit Coetzee,India,KKR,PBKS,PBKS,0.3,₹0.3 Cr,4.37,₹4.37 Cr,Won,Sold,All-Rounder,True
+292,Shreyas Plessis,New Zealand,LSG,MI,MI,2.0,₹2.0 Cr,3.11,₹3.11 Cr,Won,Sold,Batter,False
+293,Rohit Varma,India,,SRH,SRH,0.3,₹0.3 Cr,,,Lost,Unsold,All-Rounder,False
+294,Nicholas Cummins,India,,KKR,KKR,0.75,₹0.75 Cr,,,Lost,Unsold,Bowler,True
+295,Gerald Siraj,South Africa,,MI,MI,0.3,₹0.3 Cr,,,Lost,Unsold,Bowler,False
+296,Arshdeep Plessis,England,DC,DC,DC,1.5,₹1.5 Cr,27.0,₹27.0 Cr,Won,Sold,All-Rounder,True
+297,Ravindra Yadav,West Indies,LSG,GT,GT,0.3,₹0.3 Cr,8.56,₹8.56 Cr,Won,Sold,Batter,True
+298,Travis Kishan,South Africa,RCB,MI,MI,1.0,₹1.0 Cr,8.69,₹8.69 Cr,Won,Sold,All-Rounder,True
+299,Mitchell Ferguson,India,DC,PBKS,PBKS,0.5,₹0.5 Cr,0.8,₹0.8 Cr,Won,Sold,Batter,False
+300,Faf Livingstone,India,KKR,GT,GT,1.0,₹1.0 Cr,27.0,₹27.0 Cr,Won,Sold,All-Rounder,True
+301,Quinton Chahal,Bangladesh,PBKS,DC,DC,0.75,₹0.75 Cr,2.7,₹2.7 Cr,Won,Sold,Bowler,True
+302,Mohammed Maxwell,India,RCB,DC,DC,1.0,₹1.0 Cr,1.3,₹1.3 Cr,Won,Sold,Batter,False
+303,Glenn Pooran,Sri Lanka,RCB,RCB,RCB,0.3,₹0.3 Cr,3.21,₹3.21 Cr,Won,Sold,Batter,False
+304,Pat Kohli,India,RCB,SRH,SRH,1.5,₹1.5 Cr,1.97,₹1.97 Cr,Won,Sold,Bowler,False
+305,Hardik Livingstone,South Africa,CSK,DC,DC,0.3,₹0.3 Cr,2.39,₹2.39 Cr,Won,Sold,Bowler,True
+306,Heinrich Maxwell,India,RR,SRH,SRH,1.0,₹1.0 Cr,4.45,₹4.45 Cr,Won,Sold,Bowler,True
+307,Nicholas Kumar,England,MI,GT,GT,0.75,₹0.75 Cr,4.01,₹4.01 Cr,Won,Sold,Bowler,True
+308,Sam Bumrah,India,MI,LSG,LSG,0.75,₹0.75 Cr,4.69,₹4.69 Cr,Won,Sold,Wicketkeeper,True
+309,Mukesh Cummins,India,KKR,KKR,KKR,0.3,₹0.3 Cr,0.3,₹0.3 Cr,Won,Sold,Bowler,False
+310,Kagiso Stoinis,India,RR,DC,DC,0.3,₹0.3 Cr,0.43,₹0.43 Cr,Won,Sold,Batter,False
+311,Axar Kishan,Bangladesh,LSG,SRH,SRH,0.3,₹0.3 Cr,0.77,₹0.77 Cr,Won,Sold,Batter,False
+312,Liam Kishan,Bangladesh,PBKS,RR,RR,2.0,₹2.0 Cr,5.36,₹5.36 Cr,Won,Sold,Bowler,False
+313,Marcus Curran,India,,RCB,RCB,0.3,₹0.3 Cr,,,Lost,Unsold,Bowler,False
+314,Shreyas Varma,India,SRH,LSG,LSG,0.3,₹0.3 Cr,0.56,₹0.56 Cr,Won,Sold,Batter,False
+315,Hardik Conway,India,PBKS,RR,RR,1.5,₹1.5 Cr,1.5,₹1.5 Cr,Won,Sold,Batter,False
+316,Axar Cummins,India,MI,RCB,RCB,1.0,₹1.0 Cr,6.51,₹6.51 Cr,Won,Sold,Wicketkeeper,True
+317,Ishan Starc,Afghanistan,MI,PBKS,PBKS,1.0,₹1.0 Cr,7.95,₹7.95 Cr,Won,Sold,All-Rounder,True
+318,Travis Varma,India,LSG,CSK,CSK,2.0,₹2.0 Cr,4.94,₹4.94 Cr,Won,Sold,Wicketkeeper,False
+319,Glenn Kumar,India,LSG,KKR,KKR,0.5,₹0.5 Cr,2.34,₹2.34 Cr,Won,Sold,Bowler,True
+320,Marcus Stoinis,Australia,,GT,GT,1.5,₹1.5 Cr,,,Lost,Unsold,All-Rounder,False
+321,Shubman Iyer,India,GT,LSG,LSG,0.75,₹0.75 Cr,2.32,₹2.32 Cr,Won,Sold,Batter,True
+322,Nicholas Warner,India,,RR,RR,0.75,₹0.75 Cr,,,Lost,Unsold,Bowler,False
+323,Mohammed Patel,India,,DC,DC,1.0,₹1.0 Cr,,,Lost,Unsold,All-Rounder,True
+324,Jasprit Singh,West Indies,,DC,DC,0.3,₹0.3 Cr,,,Lost,Unsold,All-Rounder,False
+325,Tilak Head,England,CSK,KKR,KKR,0.5,₹0.5 Cr,1.11,₹1.11 Cr,Won,Sold,Bowler,False
+326,Axar Chahal,India,,PBKS,PBKS,2.0,₹2.0 Cr,,,Lost,Unsold,Batter,True
+327,Quinton Siraj,Australia,LSG,RR,RR,1.0,₹1.0 Cr,1.58,₹1.58 Cr,Won,Sold,Bowler,False
+328,Mitchell Archer,West Indies,,GT,GT,1.0,₹1.0 Cr,,,Lost,Unsold,Batter,False
+329,Arshdeep Iyer,India,CSK,SRH,SRH,0.5,₹0.5 Cr,2.06,₹2.06 Cr,Won,Sold,All-Rounder,True
+330,Yuzvendra Bumrah,Afghanistan,PBKS,CSK,CSK,1.5,₹1.5 Cr,3.91,₹3.91 Cr,Won,Sold,All-Rounder,False
+331,Jofra Singh,Australia,PBKS,MI,MI,0.5,₹0.5 Cr,1.13,₹1.13 Cr,Won,Sold,All-Rounder,False
+332,Mohammed Yadav,West Indies,RR,GT,GT,0.5,₹0.5 Cr,1.08,₹1.08 Cr,Won,Sold,All-Rounder,False
+333,Kagiso Maxwell,Afghanistan,PBKS,MI,MI,1.0,₹1.0 Cr,2.65,₹2.65 Cr,Won,Sold,Batter,False
+334,Ishan Livingstone,Sri Lanka,MI,MI,MI,1.0,₹1.0 Cr,10.88,₹10.88 Cr,Won,Sold,Batter,True
+335,Trent Chahal,India,,RR,RR,0.5,₹0.5 Cr,,,Lost,Unsold,Batter,True
+336,Rohit Jadeja,India,,RR,RR,2.0,₹2.0 Cr,,,Lost,Unsold,Batter,False
+337,Mukesh Pathirana,South Africa,,PBKS,PBKS,1.0,₹1.0 Cr,,,Lost,Unsold,All-Rounder,True
+338,Aarav Yadav,India,,KKR,KKR,1.0,₹1.0 Cr,,,Lost,Unsold,All-Rounder,False
+339,Axar Curran,India,SRH,DC,DC,0.5,₹0.5 Cr,2.01,₹2.01 Cr,Won,Sold,Batter,True
+340,Travis Pant,Afghanistan,,LSG,LSG,0.75,₹0.75 Cr,,,Lost,Unsold,Batter,False
+341,Trent Sharma,India,KKR,PBKS,PBKS,1.0,₹1.0 Cr,7.36,₹7.36 Cr,Won,Sold,Wicketkeeper,False
+342,David Kishan,India,,LSG,LSG,0.5,₹0.5 Cr,,,Lost,Unsold,Wicketkeeper,True
+343,Tilak Jadeja,India,PBKS,GT,GT,0.3,₹0.3 Cr,0.94,₹0.94 Cr,Won,Sold,Batter,True
+344,Aarav Siraj,India,GT,DC,DC,1.0,₹1.0 Cr,4.11,₹4.11 Cr,Won,Sold,Batter,False
+345,Shreyas Stoinis,India,RCB,CSK,CSK,1.0,₹1.0 Cr,9.45,₹9.45 Cr,Won,Sold,Batter,True
+346,Trent Head,India,LSG,CSK,CSK,1.0,₹1.0 Cr,11.53,₹11.53 Cr,Won,Sold,Batter,True
+347,Aarav Kishan,Australia,,MI,MI,0.3,₹0.3 Cr,,,Lost,Unsold,Bowler,True
+348,Sam Rabada,Afghanistan,MI,MI,MI,0.5,₹0.5 Cr,5.82,₹5.82 Cr,Won,Sold,Batter,True
+349,Ravindra Archer,India,CSK,RR,RR,0.5,₹0.5 Cr,4.83,₹4.83 Cr,Won,Sold,All-Rounder,False
+350,Kuldeep Pandya,India,,CSK,CSK,0.3,₹0.3 Cr,,,Lost,Unsold,Batter,False
+351,Marcus Rabada,India,DC,RCB,RCB,0.3,₹0.3 Cr,2.6,₹2.6 Cr,Won,Sold,All-Rounder,False
+352,Hardik Yadav,India,MI,GT,GT,0.3,₹0.3 Cr,1.64,₹1.64 Cr,Won,Sold,Bowler,True
+353,Mitchell Cummins,Australia,PBKS,MI,MI,0.3,₹0.3 Cr,2.37,₹2.37 Cr,Won,Sold,Bowler,True
+354,Axar Maxwell,India,SRH,SRH,SRH,0.5,₹0.5 Cr,0.96,₹0.96 Cr,Won,Sold,Wicketkeeper,False
+355,Wanindu Ferguson,Bangladesh,,RCB,RCB,0.3,₹0.3 Cr,,,Lost,Unsold,All-Rounder,True
+356,Axar Varma,India,,PBKS,PBKS,0.3,₹0.3 Cr,,,Lost,Unsold,Bowler,True
+357,Yuzvendra Pandya,India,DC,CSK,CSK,0.75,₹0.75 Cr,4.17,₹4.17 Cr,Won,Sold,All-Rounder,False
+358,Ravindra Conway,India,GT,LSG,LSG,0.5,₹0.5 Cr,2.15,₹2.15 Cr,Won,Sold,Batter,True
+359,Mitchell Green,India,MI,DC,DC,0.3,₹0.3 Cr,1.69,₹1.69 Cr,Won,Sold,All-Rounder,True
+360,Jos Ferguson,India,DC,PBKS,PBKS,0.3,₹0.3 Cr,0.69,₹0.69 Cr,Won,Sold,Batter,True
+361,Kuldeep Boult,Australia,RR,SRH,SRH,0.5,₹0.5 Cr,2.08,₹2.08 Cr,Won,Sold,Bowler,True
+362,Shreyas Starc,Australia,,RR,RR,1.5,₹1.5 Cr,,,Lost,Unsold,Batter,True
+363,Glenn Bumrah,India,DC,RR,RR,0.5,₹0.5 Cr,8.51,₹8.51 Cr,Won,Sold,Batter,False
+364,Kagiso Kohli,Australia,LSG,RCB,RCB,0.5,₹0.5 Cr,1.09,₹1.09 Cr,Won,Sold,Bowler,False
+365,Nicholas Maxwell,England,,DC,DC,0.3,₹0.3 Cr,,,Lost,Unsold,Wicketkeeper,True
+366,Quinton Plessis,West Indies,,DC,DC,0.5,₹0.5 Cr,,,Lost,Unsold,All-Rounder,False
+367,Virat Brevis,India,CSK,PBKS,PBKS,0.3,₹0.3 Cr,0.78,₹0.78 Cr,Won,Sold,Bowler,True
+368,Wanindu Pooran,New Zealand,,GT,GT,0.5,₹0.5 Cr,,,Lost,Unsold,Bowler,False
+369,Aarav Boult,India,SRH,DC,DC,0.3,₹0.3 Cr,1.19,₹1.19 Cr,Won,Sold,Wicketkeeper,True
+370,Kuldeep Ferguson,India,RCB,DC,DC,0.5,₹0.5 Cr,4.93,₹4.93 Cr,Won,Sold,Batter,True
+371,Aarav Pant,England,CSK,GT,GT,0.3,₹0.3 Cr,7.67,₹7.67 Cr,Won,Sold,Bowler,True
+372,Heinrich Archer,India,SRH,PBKS,PBKS,0.3,₹0.3 Cr,2.52,₹2.52 Cr,Won,Sold,All-Rounder,True
+373,Gerald Patel,India,MI,SRH,SRH,0.75,₹0.75 Cr,1.81,₹1.81 Cr,Won,Sold,Bowler,True
+374,Ravindra Boult,India,,DC,DC,0.75,₹0.75 Cr,,,Lost,Unsold,All-Rounder,False
+375,Jofra Kumar,India,GT,SRH,SRH,0.3,₹0.3 Cr,1.33,₹1.33 Cr,Won,Sold,All-Rounder,False
+376,Mukesh Patel,India,RR,RR,RR,1.0,₹1.0 Cr,4.0,₹4.0 Cr,Won,Sold,Batter,False
+377,Travis Archer,Afghanistan,,CSK,CSK,2.0,₹2.0 Cr,,,Lost,Unsold,All-Rounder,False
+378,Gerald Yadav,India,,PBKS,PBKS,0.5,₹0.5 Cr,,,Lost,Unsold,All-Rounder,True
+379,Marcus Boult,New Zealand,PBKS,RCB,RCB,0.3,₹0.3 Cr,2.57,₹2.57 Cr,Won,Sold,Bowler,True
+380,Heinrich Pathirana,India,SRH,SRH,SRH,0.75,₹0.75 Cr,1.22,₹1.22 Cr,Won,Sold,Batter,False
+381,Travis Ferguson,India,PBKS,CSK,CSK,0.75,₹0.75 Cr,1.32,₹1.32 Cr,Won,Sold,All-Rounder,False
+382,Aarav Buttler,Australia,GT,PBKS,PBKS,0.5,₹0.5 Cr,2.46,₹2.46 Cr,Won,Sold,Bowler,False
+383,Shubman Archer,New Zealand,KKR,DC,DC,0.3,₹0.3 Cr,0.47,₹0.47 Cr,Won,Sold,Batter,False
+384,Matheesha Singh,India,GT,GT,GT,1.0,₹1.0 Cr,19.03,₹19.03 Cr,Won,Sold,All-Rounder,True
+385,Rohit Buttler,India,,RCB,RCB,1.0,₹1.0 Cr,,,Lost,Unsold,All-Rounder,True
+386,Yuzvendra Maxwell,New Zealand,LSG,LSG,LSG,0.5,₹0.5 Cr,1.38,₹1.38 Cr,Won,Sold,All-Rounder,False
+387,Pat Sharma,India,DC,LSG,LSG,0.3,₹0.3 Cr,1.66,₹1.66 Cr,Won,Sold,Batter,True
+388,Ravindra Pooran,India,RCB,GT,GT,0.3,₹0.3 Cr,1.18,₹1.18 Cr,Won,Sold,All-Rounder,True
+389,Yuzvendra Gill,New Zealand,,SRH,SRH,1.5,₹1.5 Cr,,,Lost,Unsold,Bowler,False
+390,Wanindu Starc,Afghanistan,,RCB,RCB,0.75,₹0.75 Cr,,,Lost,Unsold,Bowler,True
+391,Jasprit Maxwell,India,RCB,DC,DC,0.3,₹0.3 Cr,0.47,₹0.47 Cr,Won,Sold,Batter,False
+392,Sam Kumar,India,,GT,GT,0.3,₹0.3 Cr,,,Lost,Unsold,Batter,True
+393,Kuldeep Kishan,West Indies,RCB,KKR,KKR,1.5,₹1.5 Cr,14.34,₹14.34 Cr,Won,Sold,Batter,True
+394,Gerald Rabada,India,GT,PBKS,PBKS,0.75,₹0.75 Cr,2.62,₹2.62 Cr,Won,Sold,Bowler,True
+395,Hardik Boult,India,,PBKS,PBKS,0.3,₹0.3 Cr,,,Lost,Unsold,Batter,False
+396,Faf Pathirana,Afghanistan,RCB,KKR,KKR,0.3,₹0.3 Cr,3.36,₹3.36 Cr,Won,Sold,Bowler,True
+397,Virat Pant,India,DC,SRH,SRH,0.5,₹0.5 Cr,5.69,₹5.69 Cr,Won,Sold,Batter,True
+398,David Kumar,India,GT,MI,MI,1.0,₹1.0 Cr,21.17,₹21.17 Cr,Won,Sold,Bowler,True
+399,Heinrich Stoinis,Sri Lanka,GT,GT,GT,0.5,₹0.5 Cr,3.2,₹3.2 Cr,Won,Sold,Bowler,False
+400,David Theekshana,England,,RCB,RCB,1.5,₹1.5 Cr,,,Lost,Unsold,All-Rounder,False
+401,Rishabh Hasaranga,India,DC,GT,GT,0.5,₹0.5 Cr,1.21,₹1.21 Cr,Won,Sold,All-Rounder,False
+402,Kagiso Head,India,PBKS,MI,MI,0.3,₹0.3 Cr,1.78,₹1.78 Cr,Won,Sold,All-Rounder,True
+403,Axar Siraj,India,CSK,SRH,SRH,2.0,₹2.0 Cr,4.91,₹4.91 Cr,Won,Sold,Batter,True
+404,Sanju Klaasen,India,LSG,KKR,KKR,0.5,₹0.5 Cr,1.02,₹1.02 Cr,Won,Sold,All-Rounder,False
+405,Ravindra Ferguson,South Africa,CSK,RR,RR,1.0,₹1.0 Cr,2.74,₹2.74 Cr,Won,Sold,All-Rounder,False
+406,Trent Iyer,India,RCB,CSK,CSK,2.0,₹2.0 Cr,2.09,₹2.09 Cr,Won,Sold,Bowler,False
+407,Shubman Sharma,India,RCB,CSK,CSK,0.75,₹0.75 Cr,1.32,₹1.32 Cr,Won,Sold,Batter,False
+408,Mohammed Curran,India,LSG,RR,RR,0.3,₹0.3 Cr,1.6,₹1.6 Cr,Won,Sold,Batter,True
+409,Kagiso Livingstone,India,RCB,CSK,CSK,0.3,₹0.3 Cr,0.5,₹0.5 Cr,Won,Sold,Batter,False
+410,Quinton Kumar,Australia,LSG,GT,GT,1.0,₹1.0 Cr,5.67,₹5.67 Cr,Won,Sold,Bowler,True
+411,Liam Warner,India,RR,KKR,KKR,1.0,₹1.0 Cr,3.87,₹3.87 Cr,Won,Sold,Batter,True
+412,Travis Kumar,Australia,RCB,CSK,CSK,0.5,₹0.5 Cr,1.19,₹1.19 Cr,Won,Sold,Bowler,False
+413,Arshdeep Pant,India,PBKS,RR,RR,0.75,₹0.75 Cr,4.05,₹4.05 Cr,Won,Sold,Bowler,True
+414,Rashid Head,India,RR,MI,MI,0.5,₹0.5 Cr,3.49,₹3.49 Cr,Won,Sold,Batter,False
+415,Wanindu Kumar,India,CSK,MI,MI,0.3,₹0.3 Cr,6.23,₹6.23 Cr,Won,Sold,Batter,True
+416,Sanju Jadeja,England,LSG,GT,GT,0.5,₹0.5 Cr,2.22,₹2.22 Cr,Won,Sold,Wicketkeeper,False
+417,Travis Chahal,India,MI,GT,GT,0.75,₹0.75 Cr,1.7,₹1.7 Cr,Won,Sold,Bowler,False
+418,Travis Cummins,India,GT,SRH,SRH,0.75,₹0.75 Cr,1.26,₹1.26 Cr,Won,Sold,All-Rounder,False
+419,Jofra Cummins,South Africa,DC,SRH,SRH,1.5,₹1.5 Cr,2.89,₹2.89 Cr,Won,Sold,Bowler,False
+420,Nicholas Pant,Australia,,KKR,KKR,1.5,₹1.5 Cr,,,Lost,Unsold,Bowler,True
+421,Kuldeep Patel,West Indies,SRH,MI,MI,0.5,₹0.5 Cr,1.98,₹1.98 Cr,Won,Sold,Bowler,False
+422,Yuzvendra Green,India,,RR,RR,0.3,₹0.3 Cr,,,Lost,Unsold,Batter,True
+423,Rishabh Pandya,India,PBKS,PBKS,PBKS,0.3,₹0.3 Cr,0.3,₹0.3 Cr,Won,Sold,Batter,False
+424,Trent Pathirana,India,,MI,MI,0.3,₹0.3 Cr,,,Lost,Unsold,Wicketkeeper,False
+425,Shubman Pathirana,India,DC,RCB,RCB,0.3,₹0.3 Cr,0.5,₹0.5 Cr,Won,Sold,Batter,False
+426,Arshdeep Pandya,India,KKR,DC,DC,0.3,₹0.3 Cr,1.03,₹1.03 Cr,Won,Sold,Batter,True
+427,Matheesha Cummins,India,GT,DC,DC,0.3,₹0.3 Cr,0.86,₹0.86 Cr,Won,Sold,Bowler,True
+428,Suryakumar Warner,India,MI,SRH,SRH,0.3,₹0.3 Cr,3.41,₹3.41 Cr,Won,Sold,Batter,True
+429,Sanju Yadav,India,,PBKS,PBKS,0.75,₹0.75 Cr,,,Lost,Unsold,All-Rounder,True
+430,Heinrich Pant,India,RCB,RR,RR,2.0,₹2.0 Cr,6.57,₹6.57 Cr,Won,Sold,Batter,True
+431,Kagiso Conway,England,RR,RR,RR,0.5,₹0.5 Cr,11.81,₹11.81 Cr,Won,Sold,Batter,True
+432,Travis Singh,India,GT,GT,GT,0.75,₹0.75 Cr,1.15,₹1.15 Cr,Won,Sold,Bowler,False
+433,Kuldeep Samson,New Zealand,RCB,KKR,KKR,0.3,₹0.3 Cr,1.2,₹1.2 Cr,Won,Sold,Bowler,False
+434,Axar Theekshana,England,RCB,MI,MI,0.75,₹0.75 Cr,3.02,₹3.02 Cr,Won,Sold,Wicketkeeper,False
+435,Trent Archer,India,,MI,MI,1.0,₹1.0 Cr,,,Lost,Unsold,All-Rounder,False
+436,Jos Pandya,India,SRH,LSG,LSG,0.5,₹0.5 Cr,0.8,₹0.8 Cr,Won,Sold,Bowler,False
+437,Travis Sharma,India,RCB,MI,MI,1.0,₹1.0 Cr,5.1,₹5.1 Cr,Won,Sold,Bowler,True
+438,Mitchell Kishan,India,RCB,RR,RR,1.0,₹1.0 Cr,8.9,₹8.9 Cr,Won,Sold,Batter,True
+439,Hardik Theekshana,Australia,RR,RR,RR,0.75,₹0.75 Cr,9.27,₹9.27 Cr,Won,Sold,Wicketkeeper,True
+440,Mohammed Brevis,England,KKR,PBKS,PBKS,0.5,₹0.5 Cr,2.89,₹2.89 Cr,Won,Sold,Wicketkeeper,False
+441,Glenn Archer,New Zealand,RR,DC,DC,2.0,₹2.0 Cr,11.09,₹11.09 Cr,Won,Sold,Batter,False
+442,Aarav Gill,South Africa,KKR,SRH,SRH,0.75,₹0.75 Cr,1.8,₹1.8 Cr,Won,Sold,Wicketkeeper,False
+443,Mukesh Maxwell,New Zealand,DC,DC,DC,0.5,₹0.5 Cr,1.33,₹1.33 Cr,Won,Sold,All-Rounder,False
+444,Mukesh Hasaranga,India,SRH,RCB,RCB,0.5,₹0.5 Cr,2.75,₹2.75 Cr,Won,Sold,All-Rounder,True
+445,Liam Iyer,India,DC,DC,DC,0.5,₹0.5 Cr,3.02,₹3.02 Cr,Won,Sold,Wicketkeeper,True
+446,Matheesha Jadeja,Australia,RCB,KKR,KKR,0.5,₹0.5 Cr,5.75,₹5.75 Cr,Won,Sold,Batter,True
+447,Shubman Green,South Africa,PBKS,RCB,RCB,2.0,₹2.0 Cr,3.64,₹3.64 Cr,Won,Sold,Bowler,False
+448,Hardik Kumar,India,RCB,RR,RR,0.3,₹0.3 Cr,0.4,₹0.4 Cr,Won,Sold,Wicketkeeper,False
+449,Sam Gill,India,,PBKS,PBKS,0.5,₹0.5 Cr,,,Lost,Unsold,All-Rounder,True
+450,Virat Cummins,India,,RR,RR,0.75,₹0.75 Cr,,,Lost,Unsold,All-Rounder,True
+451,Hardik Klaasen,India,,SRH,SRH,0.5,₹0.5 Cr,,,Lost,Unsold,All-Rounder,True
+452,Yuzvendra Rabada,India,,GT,GT,0.3,₹0.3 Cr,,,Lost,Unsold,Wicketkeeper,False
+453,Virat Rabada,India,PBKS,GT,GT,0.3,₹0.3 Cr,2.25,₹2.25 Cr,Won,Sold,Batter,False
+454,Mohammed Head,India,DC,MI,MI,0.75,₹0.75 Cr,1.79,₹1.79 Cr,Won,Sold,All-Rounder,False
+455,Virat Coetzee,India,CSK,GT,GT,0.5,₹0.5 Cr,0.61,₹0.61 Cr,Won,Sold,Batter,False
+456,Glenn Iyer,India,PBKS,CSK,CSK,2.0,₹2.0 Cr,13.58,₹13.58 Cr,Won,Sold,Wicketkeeper,True
+457,Rohit Starc,South Africa,CSK,SRH,SRH,2.0,₹2.0 Cr,4.36,₹4.36 Cr,Won,Sold,All-Rounder,False
+458,Rohit Green,New Zealand,,SRH,SRH,0.3,₹0.3 Cr,,,Lost,Unsold,Batter,False
+459,Mitchell Starc,India,,MI,MI,2.0,₹2.0 Cr,,,Lost,Unsold,Wicketkeeper,True
+460,Matheesha Iyer,India,MI,GT,GT,0.75,₹0.75 Cr,0.75,₹0.75 Cr,Won,Sold,Bowler,False
+461,Wanindu Patel,India,RCB,KKR,KKR,0.5,₹0.5 Cr,4.05,₹4.05 Cr,Won,Sold,Batter,False
+462,Pat Klaasen,India,CSK,CSK,CSK,1.5,₹1.5 Cr,4.65,₹4.65 Cr,Won,Sold,Wicketkeeper,False
+463,Virat Green,India,KKR,CSK,CSK,1.0,₹1.0 Cr,16.8,₹16.8 Cr,Won,Sold,Bowler,True
+464,Trent Rabada,New Zealand,,SRH,SRH,0.3,₹0.3 Cr,,,Lost,Unsold,Batter,True
+465,Virat Klaasen,India,,LSG,LSG,1.0,₹1.0 Cr,,,Lost,Unsold,All-Rounder,False
+466,Jasprit Livingstone,India,PBKS,RR,RR,2.0,₹2.0 Cr,2.12,₹2.12 Cr,Won,Sold,All-Rounder,False
+467,Marcus Maxwell,Australia,,DC,DC,0.3,₹0.3 Cr,,,Lost,Unsold,Wicketkeeper,False
+468,David Green,India,MI,PBKS,PBKS,0.3,₹0.3 Cr,0.51,₹0.51 Cr,Won,Sold,Batter,False
+469,Glenn Yadav,India,KKR,DC,DC,0.3,₹0.3 Cr,0.57,₹0.57 Cr,Won,Sold,Bowler,True
+470,Pat Chahal,England,SRH,DC,DC,1.0,₹1.0 Cr,5.74,₹5.74 Cr,Won,Sold,Bowler,True
+471,Jofra Boult,England,SRH,PBKS,PBKS,1.0,₹1.0 Cr,2.03,₹2.03 Cr,Won,Sold,Batter,False
+472,Gerald Curran,West Indies,MI,RCB,RCB,0.3,₹0.3 Cr,0.7,₹0.7 Cr,Won,Sold,Bowler,False
+473,Shreyas Boult,India,RCB,RCB,RCB,0.5,₹0.5 Cr,2.0,₹2.0 Cr,Won,Sold,Batter,True
+474,Rishabh Samson,India,GT,GT,GT,0.3,₹0.3 Cr,2.09,₹2.09 Cr,Won,Sold,Batter,True
+475,Jofra Rabada,India,,RCB,RCB,0.3,₹0.3 Cr,,,Lost,Unsold,Bowler,False
+476,Rashid Green,India,RR,MI,MI,0.75,₹0.75 Cr,0.78,₹0.78 Cr,Won,Sold,Bowler,False
+477,Sanju Samson,India,RR,RR,RR,0.75,₹0.75 Cr,2.79,₹2.79 Cr,Won,Sold,Batter,True
+478,Ravindra Sharma,Afghanistan,CSK,KKR,KKR,0.3,₹0.3 Cr,0.98,₹0.98 Cr,Won,Sold,Batter,True
+479,Mukesh Green,India,SRH,RR,RR,0.75,₹0.75 Cr,1.46,₹1.46 Cr,Won,Sold,Bowler,False
+480,Glenn Brevis,South Africa,LSG,RR,RR,0.3,₹0.3 Cr,1.35,₹1.35 Cr,Won,Sold,Batter,False
+481,Faf Maxwell,Bangladesh,CSK,GT,GT,0.5,₹0.5 Cr,2.53,₹2.53 Cr,Won,Sold,Batter,True
+482,Rishabh Iyer,India,,CSK,CSK,0.3,₹0.3 Cr,,,Lost,Unsold,Bowler,False
+483,Pat Livingstone,India,RCB,GT,GT,0.3,₹0.3 Cr,0.41,₹0.41 Cr,Won,Sold,Bowler,False
+484,Nicholas Siraj,India,RR,LSG,LSG,1.0,₹1.0 Cr,14.1,₹14.1 Cr,Won,Sold,Batter,True
+485,Rashid Kumar,India,,CSK,CSK,0.75,₹0.75 Cr,,,Lost,Unsold,All-Rounder,True
+486,Matheesha Bumrah,India,PBKS,GT,GT,0.3,₹0.3 Cr,4.43,₹4.43 Cr,Won,Sold,Bowler,True
+487,David Brevis,England,MI,RCB,RCB,1.0,₹1.0 Cr,11.43,₹11.43 Cr,Won,Sold,Batter,True
+488,Faf Bumrah,England,CSK,PBKS,PBKS,2.0,₹2.0 Cr,3.95,₹3.95 Cr,Won,Sold,Batter,False
+489,Suryakumar Iyer,India,GT,CSK,CSK,1.5,₹1.5 Cr,16.2,₹16.2 Cr,Won,Sold,Bowler,True
+490,Jofra Pandya,India,DC,GT,GT,0.75,₹0.75 Cr,10.62,₹10.62 Cr,Won,Sold,Bowler,True
+491,Arshdeep Bumrah,West Indies,GT,RR,RR,1.0,₹1.0 Cr,1.94,₹1.94 Cr,Won,Sold,Batter,False
+492,Heinrich Yadav,India,LSG,MI,MI,2.0,₹2.0 Cr,11.9,₹11.9 Cr,Won,Sold,Bowler,False
+493,Arshdeep Warner,India,DC,GT,GT,0.5,₹0.5 Cr,0.67,₹0.67 Cr,Won,Sold,Bowler,False
+494,Shreyas Jadeja,India,,DC,DC,1.5,₹1.5 Cr,,,Lost,Unsold,Wicketkeeper,False
+495,Travis Bumrah,India,MI,MI,MI,0.75,₹0.75 Cr,5.98,₹5.98 Cr,Won,Sold,Batter,True
+496,Yuzvendra Coetzee,India,SRH,GT,GT,0.3,₹0.3 Cr,11.55,₹11.55 Cr,Won,Sold,Bowler,True
+497,Ravindra Klaasen,South Africa,MI,SRH,SRH,0.5,₹0.5 Cr,6.26,₹6.26 Cr,Won,Sold,Batter,True
+498,Trent Yadav,West Indies,GT,KKR,KKR,0.75,₹0.75 Cr,6.63,₹6.63 Cr,Won,Sold,Bowler,True
+499,Liam Hasaranga,India,,PBKS,PBKS,0.75,₹0.75 Cr,,,Lost,Unsold,Batter,True
+500,David Sharma,India,SRH,LSG,LSG,2.0,₹2.0 Cr,4.35,₹4.35 Cr,Won,Sold,All-Rounder,False
+501,Glenn Green,India,RCB,SRH,SRH,0.5,₹0.5 Cr,1.03,₹1.03 Cr,Won,Sold,All-Rounder,False
+502,Arshdeep Yadav,Afghanistan,,PBKS,PBKS,0.5,₹0.5 Cr,,,Lost,Unsold,Bowler,True
+503,Sanju Maxwell,India,DC,SRH,SRH,0.75,₹0.75 Cr,14.76,₹14.76 Cr,Won,Sold,All-Rounder,True
+504,Faf Kumar,India,RR,CSK,CSK,0.3,₹0.3 Cr,0.39,₹0.39 Cr,Won,Sold,Batter,False
+505,Kagiso Boult,India,,KKR,KKR,0.3,₹0.3 Cr,,,Lost,Unsold,Wicketkeeper,True
+506,Rishabh Conway,India,KKR,RCB,RCB,0.3,₹0.3 Cr,1.32,₹1.32 Cr,Won,Sold,All-Rounder,True
+507,Virat Conway,India,SRH,MI,MI,2.0,₹2.0 Cr,2.31,₹2.31 Cr,Won,Sold,Bowler,False
+508,Jos Pooran,India,CSK,LSG,LSG,0.5,₹0.5 Cr,0.76,₹0.76 Cr,Won,Sold,Bowler,False
+509,Avesh Maxwell,England,,RCB,RCB,0.3,₹0.3 Cr,,,Lost,Unsold,Bowler,True
+510,Ishan Iyer,India,GT,LSG,LSG,0.5,₹0.5 Cr,6.78,₹6.78 Cr,Won,Sold,Batter,False
+511,Matheesha Chahal,England,KKR,DC,DC,0.5,₹0.5 Cr,1.19,₹1.19 Cr,Won,Sold,Batter,False
+512,Heinrich Pooran,India,GT,SRH,SRH,0.5,₹0.5 Cr,0.78,₹0.78 Cr,Won,Sold,All-Rounder,False
+513,Rohit Sharma,India,LSG,KKR,KKR,0.75,₹0.75 Cr,2.67,₹2.67 Cr,Won,Sold,Bowler,True
+514,Matheesha Kumar,India,PBKS,KKR,KKR,0.75,₹0.75 Cr,1.18,₹1.18 Cr,Won,Sold,Bowler,False
+515,Suryakumar Varma,India,PBKS,RR,RR,1.0,₹1.0 Cr,7.42,₹7.42 Cr,Won,Sold,Batter,True
+516,Trent Maxwell,New Zealand,RCB,RR,RR,0.3,₹0.3 Cr,2.06,₹2.06 Cr,Won,Sold,Batter,True
+517,Wanindu Iyer,India,,KKR,KKR,0.75,₹0.75 Cr,,,Lost,Unsold,Batter,True
+518,Mohammed Ferguson,India,MI,MI,MI,0.75,₹0.75 Cr,1.27,₹1.27 Cr,Won,Sold,Wicketkeeper,False
+519,Jasprit Starc,Australia,DC,PBKS,PBKS,0.3,₹0.3 Cr,2.29,₹2.29 Cr,Won,Sold,Batter,True
+520,Shubman Ferguson,India,DC,RR,RR,0.3,₹0.3 Cr,0.46,₹0.46 Cr,Won,Sold,Bowler,False
+521,Jasprit Pathirana,India,RR,DC,DC,1.5,₹1.5 Cr,3.76,₹3.76 Cr,Won,Sold,Bowler,False
+522,Quinton Hasaranga,India,PBKS,RCB,RCB,0.5,₹0.5 Cr,0.73,₹0.73 Cr,Won,Sold,Batter,False
+523,Jasprit Klaasen,India,,SRH,SRH,1.0,₹1.0 Cr,,,Lost,Unsold,Batter,False
+524,Mitchell Conway,India,RR,MI,MI,0.5,₹0.5 Cr,3.36,₹3.36 Cr,Won,Sold,Batter,False
+525,Avesh Iyer,India,,RR,RR,0.3,₹0.3 Cr,,,Lost,Unsold,Bowler,True
+526,Quinton Samson,India,,PBKS,PBKS,1.0,₹1.0 Cr,,,Lost,Unsold,All-Rounder,False
+527,Jos Archer,England,DC,LSG,LSG,1.5,₹1.5 Cr,7.94,₹7.94 Cr,Won,Sold,Bowler,True
+528,Kagiso Siraj,India,LSG,GT,GT,1.0,₹1.0 Cr,1.23,₹1.23 Cr,Won,Sold,All-Rounder,False
+529,Avesh Rabada,India,,CSK,CSK,0.5,₹0.5 Cr,,,Lost,Unsold,All-Rounder,True
+530,Virat Yadav,India,GT,RCB,RCB,0.5,₹0.5 Cr,1.87,₹1.87 Cr,Won,Sold,Batter,True
+531,Jofra Livingstone,West Indies,MI,KKR,KKR,0.5,₹0.5 Cr,2.67,₹2.67 Cr,Won,Sold,Bowler,True
+532,Rishabh Head,India,RCB,RCB,RCB,0.5,₹0.5 Cr,1.76,₹1.76 Cr,Won,Sold,Batter,True
+533,Pat Varma,New Zealand,LSG,CSK,CSK,0.75,₹0.75 Cr,5.86,₹5.86 Cr,Won,Sold,All-Rounder,True
+534,Marcus Archer,Australia,GT,RCB,RCB,0.3,₹0.3 Cr,2.43,₹2.43 Cr,Won,Sold,All-Rounder,True
+535,Avesh Buttler,India,PBKS,SRH,SRH,1.0,₹1.0 Cr,3.43,₹3.43 Cr,Won,Sold,Bowler,True
+536,Arshdeep Maxwell,India,PBKS,RR,RR,1.5,₹1.5 Cr,2.81,₹2.81 Cr,Won,Sold,Wicketkeeper,False
+537,Suryakumar Samson,India,RCB,KKR,KKR,1.5,₹1.5 Cr,8.21,₹8.21 Cr,Won,Sold,Batter,True
+538,Jasprit Yadav,India,SRH,GT,GT,0.3,₹0.3 Cr,0.78,₹0.78 Cr,Won,Sold,All-Rounder,False
+539,Rishabh Cummins,India,PBKS,LSG,LSG,2.0,₹2.0 Cr,16.01,₹16.01 Cr,Won,Sold,All-Rounder,True
+540,Jofra Iyer,India,,GT,GT,0.75,₹0.75 Cr,,,Lost,Unsold,Bowler,False
+541,Sanju Varma,India,RCB,KKR,KKR,0.75,₹0.75 Cr,1.49,₹1.49 Cr,Won,Sold,Wicketkeeper,False
+542,Nicholas Yadav,India,PBKS,LSG,LSG,0.3,₹0.3 Cr,0.44,₹0.44 Cr,Won,Sold,Bowler,False
+543,Nicholas Patel,India,LSG,PBKS,PBKS,2.0,₹2.0 Cr,9.66,₹9.66 Cr,Won,Sold,Bowler,True
+544,Heinrich Brevis,India,GT,RR,RR,0.5,₹0.5 Cr,11.83,₹11.83 Cr,Won,Sold,All-Rounder,True
+545,Trent Coetzee,India,DC,DC,DC,0.75,₹0.75 Cr,8.18,₹8.18 Cr,Won,Sold,Batter,True
+546,Gerald Pandya,India,PBKS,GT,GT,2.0,₹2.0 Cr,3.32,₹3.32 Cr,Won,Sold,Bowler,False
+547,Arshdeep Gill,India,,RR,RR,0.5,₹0.5 Cr,,,Lost,Unsold,Bowler,True
+548,Rohit Brevis,West Indies,LSG,RCB,RCB,0.3,₹0.3 Cr,1.5,₹1.5 Cr,Won,Sold,Wicketkeeper,True
+549,Avesh Boult,New Zealand,PBKS,RCB,RCB,0.5,₹0.5 Cr,1.32,₹1.32 Cr,Won,Sold,Bowler,False
+550,Sanju Iyer,India,,GT,GT,0.5,₹0.5 Cr,,,Lost,Unsold,Bowler,True
+551,Jasprit Gill,India,PBKS,KKR,KKR,2.0,₹2.0 Cr,23.38,₹23.38 Cr,Won,Sold,Bowler,True
+552,Suryakumar Stoinis,India,,RCB,RCB,1.5,₹1.5 Cr,,,Lost,Unsold,All-Rounder,False
+553,Rishabh Brevis,India,,CSK,CSK,0.5,₹0.5 Cr,,,Lost,Unsold,Bowler,False
+554,Heinrich Plessis,India,,MI,MI,0.75,₹0.75 Cr,,,Lost,Unsold,Bowler,False
+555,Ishan Warner,India,KKR,SRH,SRH,0.3,₹0.3 Cr,0.46,₹0.46 Cr,Won,Sold,All-Rounder,False
+556,Sanju Boult,India,PBKS,CSK,CSK,0.3,₹0.3 Cr,1.03,₹1.03 Cr,Won,Sold,Wicketkeeper,True
+557,Arshdeep Buttler,India,,SRH,SRH,0.3,₹0.3 Cr,,,Lost,Unsold,Batter,True
+558,Kuldeep Kumar,India,SRH,RCB,RCB,0.3,₹0.3 Cr,1.27,₹1.27 Cr,Won,Sold,Batter,True
+559,Ravindra Gill,England,,LSG,LSG,0.3,₹0.3 Cr,,,Lost,Unsold,Bowler,True
+560,Avesh Plessis,India,CSK,KKR,KKR,0.5,₹0.5 Cr,1.2,₹1.2 Cr,Won,Sold,Bowler,False
+561,Suryakumar Pathirana,India,DC,CSK,CSK,1.5,₹1.5 Cr,2.42,₹2.42 Cr,Won,Sold,All-Rounder,False
+562,Jofra Kishan,India,MI,RR,RR,0.5,₹0.5 Cr,1.09,₹1.09 Cr,Won,Sold,Batter,False
+563,Marcus Pooran,Afghanistan,LSG,SRH,SRH,1.5,₹1.5 Cr,4.31,₹4.31 Cr,Won,Sold,All-Rounder,False
+564,Suryakumar Curran,England,,MI,MI,2.0,₹2.0 Cr,,,Lost,Unsold,Wicketkeeper,True
+565,Matheesha Boult,India,PBKS,LSG,LSG,0.5,₹0.5 Cr,1.63,₹1.63 Cr,Won,Sold,Batter,False
+566,Ishan Sharma,Bangladesh,KKR,DC,DC,0.3,₹0.3 Cr,1.14,₹1.14 Cr,Won,Sold,Batter,True
+567,Ravindra Warner,Australia,KKR,LSG,LSG,0.3,₹0.3 Cr,3.06,₹3.06 Cr,Won,Sold,Wicketkeeper,True
+568,Kagiso Brevis,India,,PBKS,PBKS,1.5,₹1.5 Cr,,,Lost,Unsold,Bowler,True
+569,David Patel,India,RCB,GT,GT,0.75,₹0.75 Cr,3.94,₹3.94 Cr,Won,Sold,Batter,True
+570,Rohit Stoinis,India,GT,RCB,RCB,1.0,₹1.0 Cr,1.23,₹1.23 Cr,Won,Sold,Bowler,False
+571,Sanju Livingstone,India,,GT,GT,1.0,₹1.0 Cr,,,Lost,Unsold,Batter,True
+572,Sanju Warner,Australia,GT,RCB,RCB,2.0,₹2.0 Cr,3.43,₹3.43 Cr,Won,Sold,Bowler,False
+573,Avesh Pathirana,India,KKR,CSK,CSK,1.5,₹1.5 Cr,12.66,₹12.66 Cr,Won,Sold,Batter,False
+574,Yuzvendra Archer,India,,DC,DC,1.0,₹1.0 Cr,,,Lost,Unsold,Bowler,False
+575,Gerald Bumrah,South Africa,RCB,RR,RR,1.0,₹1.0 Cr,9.61,₹9.61 Cr,Won,Sold,Batter,True
+576,Trent Pant,India,KKR,DC,DC,0.5,₹0.5 Cr,1.19,₹1.19 Cr,Won,Sold,Wicketkeeper,False
+577,Mohammed Gill,Australia,MI,CSK,CSK,0.3,₹0.3 Cr,4.19,₹4.19 Cr,Won,Sold,Batter,True

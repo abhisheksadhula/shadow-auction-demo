@@ -12,7 +12,7 @@ Shadow GM lets IPL fans play the auction rather than just watch it.
 
 ## Live Demo
 
-👉 [shadow-auction-demo link here]
+👉 [shadow-auction-demo link here](https://abhisheksadhula.github.io/shadow-auction-demo/)
 
 ## How to play
 
